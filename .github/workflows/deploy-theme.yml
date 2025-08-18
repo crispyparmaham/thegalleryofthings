@@ -17,5 +17,5 @@ jobs:
 
       - name: Upload theme
         run: |
-          echo {{ secrets.SHOPIFY_FLAG_STORE }}
+          echo ${{ secrets.SHOPIFY_FLAG_STORE }}
           shopify theme push --json --theme tgot --store ${{ secrets.SHOPIFY_FLAG_STORE }} --password ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
