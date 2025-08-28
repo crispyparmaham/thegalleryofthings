@@ -2098,6 +2098,7 @@ input[type='checkbox'] {
 /* utility-bar */
 .utility-bar {
   height: 100%;
+  background: var(--tertiary);
 }
 
 .utility-bar--bottom-border {
@@ -2801,6 +2802,7 @@ details[open] > .header__submenu {
   padding: 1.2rem;
   text-decoration: none;
   color: rgba(var(--color-foreground), 0.75);
+  font-weight: 600;
 }
 
 .header__menu-item:hover {
@@ -3611,7 +3613,13 @@ src:url("https://cdn.shopify.com/s/files/1/0959/5174/9465/files/MartianMono-Semi
 }
 
 
-h1, h2, h3, h4, h5, h6 { font-family: "MartianMono-SemiBold"!important; }
+:root {
+  --font-heading-family: "MartianMono-SemiBold" !important; 
+}
+
+/* h1, h2, h3, h4, h5, h6 { 
+  font-family: var(--font-heading-family);
+} */
 
 
 h1, h2 {
