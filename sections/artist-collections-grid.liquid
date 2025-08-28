@@ -1,0 +1,29 @@
+{% comment %}
+Section: Artist Collections Grid
+Zeigt alle Kollektionen an, die das Metaobjekt 'artists' haben.
+{% endcomment %}
+
+<div class="artist-collections-grid" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:20px; padding:20px;">
+
+  {% for collection in collections %}
+    {% if collection.metafields.custom.artists %}
+      <div class="artist-item" style="border:1px solid #ddd; border-radius:10px; overflow:hidden; text-align:center; transition: transform 0.3s;">
+        <a href="{{ collection.url }}" style="color:inherit; text-decoration:none; display:block;">
+          
+          {% if collection.image %}
+            <img src="{{ collection.image | img_url: '400x400' }}" alt="{{ collection.title }}" style="width:100%; height:auto; display:block;">
+          {% endif %}
+          
+          <h3 style="padding:10px 5px; font-size:1.1rem;">{{ collection.title }}</h3>
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+
+</div>
+
+<style>
+.artist-item:hover {
+  transform: scale(1.05);
+}
+</style>

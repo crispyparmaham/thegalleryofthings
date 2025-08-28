@@ -3595,3 +3595,19 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+
+@font-face {
+font-family: "MartianMono-SemiBold";
+src: url("https://cdn.shopify.com/s/files/1/0959/5174/9465/files/MartianMono-SemiBold.woff2?v=1755588467") format("woff2"),
+url("https://cdn.shopify.com/s/files/1/0959/5174/9465/files/MartianMono-SemiBold.woff2?v=1755588467") format("woff");
+src:url("https://cdn.shopify.com/s/files/1/0959/5174/9465/files/MartianMono-SemiBold.woff2?v=1755588467") format("woff");
+}
+
+
+h1, h2, h3, h4, h5, h6 { font-family: "MartianMono-SemiBold"!important; }
+
+
+h1, h2 {
+  text-transform: uppercase;
+}

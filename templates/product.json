@@ -27,6 +27,10 @@
           "type": "price",
           "settings": {}
         },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -45,14 +49,13 @@
             "show_gift_card_recipient": true
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
-        "share": {
-          "type": "share",
+        "collapsible_tab_yCJf89": {
+          "type": "collapsible_tab",
           "settings": {
-            "share_label": "Share"
+            "heading": "Über das Bild",
+            "icon": "none",
+            "content": "<ul><li>Motiv von Quint Buchholz</li><li>Fine Art Print mir 12 lichtechten Farben rasterfrei auf 300g Hahnemühle Büttenpapier</li><li>Limitierte Edition, Auflage 50, nummeriert und handsigniert vom Künstler</li><li>Blattgröße mit weißem Rand ist 60 cm * 50cm, Druckgröße 49cm * 37 cm</li><li>ungerahmt  </li></ul>",
+            "page": ""
           }
         }
       },
@@ -60,16 +63,16 @@
         "vendor",
         "title",
         "price",
+        "description",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description",
-        "share"
+        "collapsible_tab_yCJf89"
       ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_size": "large",
+        "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "gallery_layout": "stacked",
@@ -85,7 +88,7 @@
     "related-products": {
       "type": "related-products",
       "settings": {
-        "heading": "You may also like",
+        "heading": "Empfehlungen für Sie",
         "heading_size": "h2",
         "products_to_show": 4,
         "columns_desktop": 4,
