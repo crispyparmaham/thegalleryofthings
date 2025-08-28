@@ -38,14 +38,10 @@
             "swatch_shape": "circle"
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
         },
@@ -54,7 +50,25 @@
           "settings": {
             "heading": "Über das Bild",
             "icon": "none",
-            "content": "<ul><li>Motiv von Quint Buchholz</li><li>Fine Art Print mir 12 lichtechten Farben rasterfrei auf 300g Hahnemühle Büttenpapier</li><li>Limitierte Edition, Auflage 50, nummeriert und handsigniert vom Künstler</li><li>Blattgröße mit weißem Rand ist 60 cm * 50cm, Druckgröße 49cm * 37 cm</li><li>ungerahmt  </li></ul>",
+            "content": "{{ product.metafields.custom[\"about-the-work\"] | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_8GfPmY": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "{{ product.metafields.custom[\"accordeon_title-1\"].value }}",
+            "icon": "none",
+            "content": "{{ product.metafields.custom[\"accordeon_content-1\"] | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_Jc3ypz": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "{{ product.metafields.custom[\"accordeon_title-2\"].value }}",
+            "icon": "none",
+            "content": "{{ product.metafields.custom[\"accordeon_content-2\"] | metafield_tag }}",
             "page": ""
           }
         }
@@ -65,9 +79,10 @@
         "price",
         "description",
         "variant_picker",
-        "quantity_selector",
         "buy_buttons",
-        "collapsible_tab_yCJf89"
+        "collapsible_tab_yCJf89",
+        "collapsible_tab_8GfPmY",
+        "collapsible_tab_Jc3ypz"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -81,7 +96,7 @@
         "image_zoom": "lightbox",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 36,
+        "padding_top": 0,
         "padding_bottom": 12
       }
     },

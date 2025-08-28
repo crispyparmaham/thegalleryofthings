@@ -1,0 +1,18 @@
+  {{ 'snippet-breadcrumbs.css' | asset_url | stylesheet_tag }}
+
+
+<nav aria-label="Breadcrumb" class="breadcrumb">
+  <ol>
+    <li><a href="/de">Startseite</a></li>
+    {% assign breadcrumb = request.path | split: '/' %}
+    {% for part in breadcrumb %}
+      {% unless forloop.first or forloop.last %}
+        <li><a href="/{{ breadcrumb | slice: 1, forloop.index0 | join: '/' }}">{{ part }}</a></li>
+      {% else %}
+        {% unless forloop.first %}
+        <li aria-current="page">{{ part }}</li>
+        {% endunless %}
+      {% endunless %}
+    {% endfor %}
+  </ol>
+</nav>
