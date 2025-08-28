@@ -2538,7 +2538,7 @@ input[type='checkbox'] {
   height: 100%;
 }
 
-.header__icon .svg-wrapper {
+.header__icon .svg-wrapper, .search-modal__close-button .svg-wrapper {
   width: 44px;
   height: 44px;
 }
