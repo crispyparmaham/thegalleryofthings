@@ -25,9 +25,9 @@
         "tgot_footer_content_KQ7ncH": {
           "type": "tgot-footer-content",
           "settings": {
-            "heading": "Die Gallerie der Dinge",
-            "address": "<p>Alexandra Mann M.A. Potsdamer Str. 52-54 Ecke Teltower Damm 2 14163 Berlin Zehlendorf</p>",
-            "contact_links": "contact-links-1"
+            "tgot-heading": "Die Gallerie der Dinge",
+            "tgot-address": "<p>Alexandra Mann M.A.</p><p>Potsdamer Str. 52-54 </p><p>Ecke Teltower Damm 2</p><p>14163 Berlin Zehlendorf</p>",
+            "tgot-contact_links": "contact-links-1"
           }
         },
         "image_djUbJY": {
