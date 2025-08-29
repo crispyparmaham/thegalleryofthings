@@ -49,9 +49,10 @@
     or section.settings.enable_follow_on_shop
   -%}
     {%- unless only_empty_brand -%}
-      <div class="footer__content-top page-width">
+      <div class="footer__content-top footer-width">
+      {% comment %} <div class="footer__content-top page-width"> {% endcomment %}
         {%- if section.blocks.size > 0 -%}
-          {%- liquid
+          {% comment %} {%- liquid
             if section.blocks.size == 9
               assign footer_grid_class = 'grid--3-col-tablet'
             elsif section.blocks.size > 6
@@ -59,16 +60,18 @@
             elsif section.blocks.size > 4
               assign footer_grid_class = 'grid--3-col-tablet'
             endif
-          -%}
+          -%} {% endcomment %}
           <div
-            class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            class="footer__blocks-wrapper {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {% comment %} class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% endcomment %}
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
             {% endif %}
           >
             {%- for block in section.blocks -%}
               <div
-                class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                class="footer-block {% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {% comment %} class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" {% endcomment %}
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
@@ -153,6 +156,35 @@
                         {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
                       {%- endif -%}
                     </div>
+
+                  {%- when 'tgot-footer-content' -%}
+                    <div class="tgot-footer-content">
+
+                      <div class="footer-block__heading rte">{{ block.settings.tgot-heading }}</div>
+
+                      {%- if block.settings.tgot-address != blank -%}
+                        <div class="footer-block__details-content rte">
+                          {{ block.settings.tgot-address }}
+                        </div>
+                      {%- endif -%}
+
+                      {%- if block.settings.tgot-contact_links != blank -%}
+                        <ul class="footer-block__details-content list-unstyled">
+                          {%- for link in block.settings.tgot-contact_links.links -%}
+                            <li>
+                              <a
+                                href="{{ link.url }}"
+                                class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
+                              >
+                                {{ link.title | escape }}
+                              </a>
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                      {%- endif -%}
+
+                    </div>
+
                 {%- endcase -%}
               </div>
             {%- endfor -%}
@@ -343,6 +375,30 @@
           "id": "menu",
           "default": "footer",
           "label": "t:sections.footer.blocks.link_list.settings.menu.label"
+        }
+      ]
+    },
+    {
+      "type": "tgot-footer-content",
+      "name": "TGOT Footer-Inhalt",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tgot-heading",
+          "label": "Überschrift",
+          "default": "Die Gallerie der Dinge"
+        },
+        {
+          "type": "richtext",
+          "id": "tgot-address",
+          "default": "<p>Alexandra Mann M.A. Potsdamer Str. 52-54 Ecke Teltower Damm 2 14163 Berlin Zehlendorf</p>",
+          "label": "Anschrift"
+        },
+        {
+          "type": "link_list",
+          "id": "tgot-contact_links",
+          "label": "Kontakt Links",
+          "default": "footer"
         }
       ]
     },

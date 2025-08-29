@@ -11,6 +11,29 @@
   display: block;
 }
 
+.footer__blocks-wrapper {
+  display: flex;
+  gap: 3rem;
+}
+
+
+.footer-width {
+  width: 100%;
+  padding-right: 120px; 
+}
+
+.footer-block:has(.tgot-footer-content) {
+  width: 100%;
+
+}
+
+.tgot-footer-content {
+  max-width: 600px;
+  margin-left: auto;
+}
+
+
+
 @media screen and (max-width: 749px) {
   .footer .grid {
     display: block;
