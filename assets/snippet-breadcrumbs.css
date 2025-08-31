@@ -1,9 +1,9 @@
-.breadcrumb {
-  margin: 2rem 0;
+.breadcrumbs {
+  margin: 2rem auto;
   font-size: 1.25rem;
 }
 
-.breadcrumb ol {
+.breadcrumbs ol.breadcrumbs__list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -13,30 +13,30 @@
   gap: 0.5rem;
 }
 
-.breadcrumb li {
+.breadcrumbs li {
   color: var(--primary);
   display: flex;
   align-items: center;
 }
 
-.breadcrumb li:not(:last-child)::after {
+.breadcrumbs li:not(:last-child)::after {
   content: "›";
   margin-left: 0.5rem;
   font-size: 1.1em;
   font-weight: bold;
 }
 
-.breadcrumb a {
+.breadcrumbs a {
   color: var(--primary);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.breadcrumb a:hover {
+.breadcrumbs a:hover {
   text-decoration: underline;
 }
 
-.breadcrumb li[aria-current="page"] {
+.breadcrumbs li[aria-current="page"] {
   font-weight: 500;
 }
 
