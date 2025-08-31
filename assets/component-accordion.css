@@ -10,7 +10,7 @@
   flex: 1;
 }
 
-.accordion .summary__title + .icon-caret {
+.accordion .summary__title + .icon-caret, .accordion .summary__title + .tgot-icon-plus {
   height: calc(var(--font-heading-scale) * 0.6rem);
 }
 
@@ -44,6 +44,10 @@
 
 .accordion details[open] > summary .icon-caret {
   transform: rotate(180deg);
+}
+
+.accordion details[open] > summary .tgot-icon-plus path:last-of-type {
+  fill: transparent;
 }
 
 .accordion__content {

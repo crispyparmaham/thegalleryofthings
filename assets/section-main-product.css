@@ -218,7 +218,7 @@ product-info {
 /* Product info */
 
 .product__info-container > * + * {
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 
 .product__info-container iframe {
@@ -228,7 +228,7 @@ product-info {
 .product__info-container .product-form,
 .product__info-container .product__description,
 .product__info-container .icon-with-text {
-  margin: 2.5rem 0;
+  margin: 5rem 0 4rem;
 }
 
 .product__text {
@@ -252,6 +252,10 @@ a.product__text {
 
 .product__title > * {
   margin: 0;
+}
+
+.product__title h1 {
+  text-transform: none;
 }
 
 .product__title > a {
