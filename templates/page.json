@@ -15,9 +15,28 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "artist_list_pLy89R": {
+      "type": "artist-list",
+      "name": "Artist List",
+      "settings": {
+        // "title": "Unsere Künstler*innen",
+        "heading_size": "h1",
+        // "artists_to_show": 6,
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": true,
+        "all_artists_page": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "artist_list_pLy89R"
   ]
 }

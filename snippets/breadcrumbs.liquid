@@ -83,6 +83,13 @@
         <li class="breadcrumbs__item">
           <a class="breadcrumbs__link" href="{{ article.url }}" aria-current="page">{{ article.title }}</a>
         </li>
+      {%-  when 'metaobject/artists' -%}
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="/pages/artists">Künstler*innen</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link" href="{{ request.path }}" aria-current="page">{{ page_title }}</a>
+        </li>
       {%- else -%}
         <li class="breadcrumbs__item">
           <a class="breadcrumbs__link" href="{{ request.path }}" aria-current="page">{{ page_title }}</a>

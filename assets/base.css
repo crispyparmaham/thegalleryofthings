@@ -3626,5 +3626,5 @@ src:url("https://cdn.shopify.com/s/files/1/0959/5174/9465/files/MartianMono-Semi
 
 
 h1, h2 {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
