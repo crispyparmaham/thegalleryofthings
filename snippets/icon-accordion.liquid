@@ -1,4 +1,10 @@
 {%- if icon != 'none' -%}
   {%- assign file = icon | replace: '_', '-' | prepend: 'icon-' | append: '.svg' -%}
-  <span class="svg-wrapper">{{ file | inline_asset_content }}</span>
+  <span class="svg-wrapper 
+    {% if size == 'small' %}icon-size-small
+    {% elsif size == 'medium' %}icon-size-medium
+    {% elsif size == 'large' %}icon-size-large
+    {% elsif size == 'extra-large' %}icon-size-extra-large{% endif %}">
+       {{ file | inline_asset_content }}
+    </span>
 {%- endif -%}

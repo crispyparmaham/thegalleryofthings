@@ -644,13 +644,34 @@ h3 .icon-arrow,
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.svg-wrapper.icon-size-small {
+  width: 15px;
+  height: 15px;
+}
+
+.svg-wrapper.icon-size-medium {
+  width: 30px;
+  height: 30px;
+}
+
+.svg-wrapper.icon-size-large {
+  width: 45px;
+  height: 45px;
+}
+
+.svg-wrapper.icon-size-extra-large {
+  width: 60px;
+  height: 60px;
 }
 
 .svg-wrapper > svg {
   height: 100%;
-  width: 100%;
+  width: auto;
+  /* width: 100%;  */
 }
 
 /* base-details-summary */

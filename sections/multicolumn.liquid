@@ -120,7 +120,11 @@
               {%- endif -%}
               <div class="multicolumn-card__info">
                 {%- if block.settings.title != blank -%}
-                  <h3 class="inline-richtext">{{ block.settings.title }}</h3>
+                  <div class="multicolumn-card__title-wrapper">
+                    <h3 class="inline-richtext">{{ block.settings.title }}</h3>
+                    {% render 'icon-accordion', icon: block.settings.icon, size: block.settings.icon-size %}
+                  </div>
+                  <div class="multicolumn-card__line"></div>
                 {%- endif -%}
                 {%- if block.settings.text != blank -%}
                   <div class="rte">{{ block.settings.text }}</div>
@@ -410,10 +414,54 @@
           "label": "t:sections.multicolumn.blocks.column.settings.image.label"
         },
         {
-          "type": "inline_richtext",
+          "type": "text",
           "id": "title",
           "default": "t:sections.multicolumn.blocks.column.settings.title.default",
           "label": "t:sections.multicolumn.blocks.column.settings.title.label"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.options__1.label"
+            },
+            {
+              "value": "tgot-redcircle",
+              "label": "Roter Kreis"
+            },
+            {
+              "value": "tgot-package",
+              "label": "Versandpaket"
+            },
+          ],
+          "default": "none",
+          "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.icon.label"
+        },
+        {
+          "type": "select",
+          "id": "icon-size",
+          "options": [
+            {
+              "value": "small",
+              "label": "Klein"
+            },
+            {
+              "value": "medium",
+              "label": "Mittel"
+            },
+            {
+              "value": "large",
+              "label": "Groß"
+            },
+            {
+              "value": "extra-large",
+              "label": "Extra Groß"
+            },
+          ],
+          "default": "medium",
+          "label": "Symbol-Größe"
         },
         {
           "type": "richtext",

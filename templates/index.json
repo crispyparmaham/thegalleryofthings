@@ -49,13 +49,42 @@
         "show_text_below": false
       }
     },
+    "featured_collection_rJNprK": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "spotlight",
+        "products_to_show": 3,
+        "title": "Spotlight",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 3,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
         "collection": "all",
         "products_to_show": 8,
         "title": "Alle Werke",
-        "heading_size": "h2",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
@@ -63,9 +92,9 @@
         "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
+        "view_all_style": "link",
         "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": true,
@@ -76,10 +105,99 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "multicolumn_itTMfq": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_cR7wkf": {
+          "type": "column",
+          "settings": {
+            "title": "Werke kaufen Kunst als Statement",
+            "icon": "tgot-redcircle",
+            "icon-size": "medium",
+            "text": "<p>Jedes Werk in unserer Galerie erzählt eine Geschichte -  von Widerstand, Empowerment und neuen Perspektiven. Wenn  ein Kunstwerk Sie berührt und Sie es erwerben möchten, sprechen Sie uns an! Wir beraten Sie gerne persönlich zu den verfügbaren Arbeiten, Preisen und den Hintergründen der KünstlerInnen.Mit dem Kauf eines Werkes unterstützen Sie nicht nur die Kunst- schaffenden, sondern tragen auch aktiv dazu bei, feministische, nachhaltige und aktivistische Kunst weiter in die Welt zu tragen. Lassen Sie sich inspirieren und nehmen Sie ein Stück dieser Bewegung mit nach Hause.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_YRXhwP": {
+          "type": "column",
+          "settings": {
+            "title": "Versandinformationen sicher und nachhaltig",
+            "icon": "tgot-package",
+            "icon-size": "extra-large",
+            "text": "<p>Wir legen großen Wert darauf, dass jedes Kunstwerk sicher und nachhaltig bei Ihnen ankommt. Unsere Verpackungsmaterialien sind umweltfreundlich/ recycelt, und der Versand erfolgt in Zusammenarbeit mit verantwortungsbewussten Logistikpartnern.Nationaler & Internationaler Versand möglich. Kunstgerechte Verpackung für maximale Sicherheit. Klimafreundlicher Transport, wo immer es machbar ist. Falls Sie besondere Wünsche zum Versand oder zur Abholung haben, finden wir gemeinsam eine passende Lösung!</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_cR7wkf",
+        "column_YRXhwP"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_ddmBzc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6PeQKP": {
+          "type": "heading",
+          "settings": {
+            "heading": "Noch Fragen? Ich berate Sie gerne",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6PeQKP"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "dual_hero_block_abc123": {
+      "type": "dual-hero-block",
+      "settings": {
+        "image_left": "shopify://shop_images/alexandra-mann_onchair.jpg",
+        "image_title_left": "Alexandra Mann, Galeristin hinter The Gallery of Things",
+        "link_label_left": "",
+        "link_left": "",
+        "image_right": "shopify://shop_images/galerie-tgot-zehlendorf.png",
+        "image_title_right": "Die Galerie in Berlin Zehlendorf",
+        "link_label_right": "",
+        "link_right": ""
+      }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "featured_collection_rJNprK",
+    "featured_collection",
+    "multicolumn_itTMfq",
+    "rich_text_ddmBzc",
+    "dual_hero_block_abc123"
   ]
 }
