@@ -1,0 +1,156 @@
+{%  assign authenticity_available = true %}
+{%  assign packaging_available = true %}
+{%  assign return_available = true %}
+{%  assign feedback_available = true %}
+{% comment %} {%  assign authenticity_available = false %}
+{%  assign packaging_available = false %}
+{%  assign return_available = false %}
+{%  assign feedback_available = false %} {% endcomment %}
+
+
+
+{%- if product.metafields.authenticity.text != blank -%}
+  {%- assign authenticity_available = true -%}
+{%- endif -%}
+{%- if product.metafields.packaging.text != blank -%}
+  {%- assign packaging_available = true -%}
+{%- endif -%}
+{%- if product.metafields.return.text != blank -%}
+  {%- assign return_available = true -%}
+{%- endif -%}
+{%- if product.metafields.feedback.text != blank -%}
+  {%- assign feedback_available = true -%}
+{%- endif -%}
+
+
+{% style %}
+
+{% endstyle %}
+
+<div class="product__description-additional-wrapper">
+  <section
+    class="product__description-additional-tab-container"
+  >
+    {% comment %} menu {% endcomment %}
+    <div class="product__description-additional-tab-menu-wrapper">
+        <ul class="product__description-additional-tab-menu page-width">
+        {%- if authenticity_available -%}
+            <li data-target="content-authenticity">Echtheit</li>
+        {%- endif -%}
+        {%- if packaging_available -%}
+            <li data-target="content-packaging">Verpackung & Versand</li>
+        {%- endif -%}
+        {% if return_available %}
+            <li data-target="content-return">Rückgabe</li>
+        {% endif %}
+        {% if feedback_available %}
+            <li data-target="content-feedback">Fragen & Wünsche</li>
+        {% endif %}
+
+        </ul>
+    </div>
+    {% comment %} content {% endcomment %}
+    {%- if authenticity_available -%}
+      <div id="content-authenticity" class="product__description-additional page-width" {{ block.shopify_attributes }}>
+        {%- if product.metafields.authenticity.text -%}
+          <div>
+            {{ product.metafields.authenticity.text }}
+          </div>
+        {%- endif -%}
+        Echtheit text
+      </div>
+    {%- endif -%}
+    {%- if packaging_available -%}
+      <div id="content-packaging" class="product__description-additional page-width" {{ block.shopify_attributes }}>
+        {%- if product.metafields.packaging .text -%}
+          <div>
+            {{ product.metafields.packaging.text }}
+          </div>
+        {%- endif -%}
+        Verpackung & Versand text
+      </div>
+    {%- endif -%}
+    {% if return_available %}
+      <div id="content-return" class="product__description-additional page-width" {{ block.shopify_attributes }}>
+        {%- if product.metafields.return.text -%}
+          <div>
+            {{ product.metafields.return.text }}
+          </div>
+        {%- endif -%}
+        Rückgabe text
+      </div>
+    {% endif %}
+    {% if feedback_available %}
+      <div id="content-feedback" class="product__description-additional page-width" {{ block.shopify_attributes }}>
+        {%- if product.metafields.feedback.text -%}
+          <div>
+            {{ product.metafields.feedback.text }}
+          </div>
+        {%- endif -%}
+        Fragen & Wünsche text
+      </div>
+    {% endif %}
+  </section>
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', function () {
+      let listItems = document.querySelectorAll('.product__description-additional-tab-menu li');
+      let tabContents = document.querySelectorAll('.product__description-additional');
+      listItems.forEach(function (item) {
+        listItems[0].classList.add('active-tab');
+        item.addEventListener('click', function () {
+          listItems.forEach(function (item) {
+            item.classList.remove('active-tab');
+            tabContents.forEach(function (tab) {
+              tab.style.display = 'none';
+            });
+          });
+          this.classList.add('active-tab');
+          let tabContent = document.getElementById(this.getAttribute('data-target'));
+          tabContent.style.display = 'flex';
+        });
+      });
+    });
+  </script>
+</div>
+{% comment %} potential artist-info element? {% endcomment %}
+{% comment %} {%- assign farmers = product.metafields.custom.farmer.value -%}
+{% if farmers %}
+  <div class="product__description-farmer-wrapper">
+    <section
+      class="page-width"
+    >
+      {% assign counter = 0 %}
+
+      {% for farmer in farmers %}
+        <div class="product__description-farmer-container rte" id="farmer-{{ counter }}">
+          <div>
+            <h2>
+              <span class="hl">Meet the farmers</span>
+              <span class="hxl">{{ farmer.name }}</span>
+              <span class="normal">{{ farmer.farmername }}</span>
+            </h2>
+            <p>
+              {{ farmer.beschreibung | metafield_tag }}
+            </p>
+            <a class="button button--primarys" href="{{ farmer.system.url }}" title="Zur Seite von {{  farmer.name }}"
+              >Mehr erfahren</a
+            >
+          </div>
+          <div>
+            <img
+              src="{{  farmer.bild | image_url: width: 1000 }}"
+              alt="Bild von {{  farmer.name }}"
+              class="farmer-image"
+              width="{{  farmer.bild.width }}"
+              height="{{ farmer.bild.height }}"
+            >
+          </div>
+        </div>
+        {% assign counter = counter | plus: 1 %}
+        {% if counter < farmers.count %}
+          <div class="zig-zag-line"></div>
+        {% endif %}
+      {% endfor %}
+    </section>
+  </div>
+{% endif %} {% endcomment %}
