@@ -1,4 +1,75 @@
 {%- style -%}
+.dual-hero-block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+@media (width < 992px) {
+    .dual-hero-block {
+        flex-direction: column;
+        gap: 4rem;
+    }
+}
+.hero-wrapper {
+    width: 100%;
+    flex: 1 1 0;
+    position: relative;
+}
+.hero-wrapper .media {
+    height: 100%;
+    max-height: 600px;
+    width: 100%;
+}
+.dual-hero-block .hero-wrapper .media img {
+    position: static !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.dual-hero-block .hero-wrapper a {
+    background: var(--primary);
+    color: var(--secondary);
+    padding: 1rem 2rem;
+    display: inline-block;
+    position: absolute;
+    top: -2rem;
+    z-index: 2;
+    text-decoration: none;
+    max-width: 240px;
+    line-height: 1.3;
+    text-align: start;
+    text-wrap-style: pretty;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all 0.2s ease-in-out;
+}
+.dual-hero-block .left-hero-wrapper a {
+    right: 10%;
+}
+.dual-hero-block .right-hero-wrapper a {
+    left: 10%;
+}
+@media (width < 992px) {
+    .dual-hero-block .left-hero-wrapper a {
+        right: unset;
+        left: 10%;
+    }
+}
+@media (width < 480px) {
+    .dual-hero-block .left-hero-wrapper a, .dual-hero-block .right-hero-wrapper a {
+        right: 2rem;
+        left: 2rem;
+        max-width: 100%;
+        text-wrap-style: stable;
+    }
+}
+
+.dual-hero-block .hero-wrapper a:hover {
+    background: var(--secondary);
+    color: var(--primary);
+}
 
 {%- endstyle -%}
 
@@ -15,22 +86,28 @@
   id="Dual-Hero-Block-{{ section.id }}"
   class="dual-hero-block"
 >
-    <div class="left-hero-wrapper">
-        <div class="banner__media media">
-              {{
-                section.settings.image_left
-                | image_url: width: 1500
-                | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
-              }}
+    <div class="hero-wrapper left-hero-wrapper">
+        <a href="{{ section.settings.link_left }}">
+          <span>{{ section.settings.link_label_left }}</span>
+        </a>
+        <div class="media">
+            {{
+            section.settings.image_left
+            | image_url: width: 1500
+            | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
+            }}
         </div>
     </div>
-    <div class="right-hero-wrapper">
-        <div class="banner__media media">
-              {{
-                section.settings.image_right
-                | image_url: width: 1500
-                | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
-              }}
+    <div class="hero-wrapper right-hero-wrapper">
+        <a href="{{ section.settings.link_right }}">
+          <span>{{ section.settings.link_label_right }}</span>
+        </a>
+        <div class="media">
+            {{
+            section.settings.image_right
+            | image_url: width: 1500
+            | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
+            }}
         </div>
 
     </div>
@@ -62,7 +139,7 @@
           "label": "Bildbeschriftung links",
         },
         {
-          "type": "text",
+          "type": "inline_richtext",
           "id": "link_label_left",
           "label": "Linkbeschriftung links",
           "info": "t:sections.multicolumn.blocks.column.settings.link_label.info"
@@ -87,7 +164,7 @@
           "label": "Bildbeschriftung rechts",
         },
         {
-          "type": "text",
+          "type": "inline_richtext",
           "id": "link_label_right",
           "label": "Linkbeschriftung rechts",
           "info": "t:sections.multicolumn.blocks.column.settings.link_label.info"

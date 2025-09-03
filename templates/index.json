@@ -183,12 +183,12 @@
       "settings": {
         "image_left": "shopify://shop_images/alexandra-mann_onchair.jpg",
         "image_title_left": "Alexandra Mann, Galeristin hinter The Gallery of Things",
-        "link_label_left": "",
-        "link_left": "",
+        "link_label_left": "<strong>KONTAKT</strong> zum Vernetzen  und Kunstwerke anfragen",
+        "link_left": "shopify://pages/contact",
         "image_right": "shopify://shop_images/galerie-tgot-zehlendorf.png",
         "image_title_right": "Die Galerie in Berlin Zehlendorf",
-        "link_label_right": "",
-        "link_right": ""
+        "link_label_right": "<strong>ALLE INFOS</strong> zur Galerie",
+        "link_right": "shopify://pages/uber"
       }
     }
   },
