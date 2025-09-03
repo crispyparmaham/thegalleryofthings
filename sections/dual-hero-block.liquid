@@ -26,6 +26,39 @@
     height: 100%;
     object-fit: cover;
 }
+
+.hero-wrapper .image-title {
+    position: absolute;
+    top: 7rem;
+    left: 10%;
+    right: 10%;
+    color: var(--primary);
+    font-family: var(--font-heading-family);
+    font-size: 1.4rem;
+    line-height: 1.4;
+    font-weight: 600;
+    z-index: 1;
+    height: auto;
+}
+@media (width > 991px) {
+    .hero-wrapper .image-title {
+        top: 8rem;
+        font-size: 1.6rem;
+    }
+    .left-hero-wrapper .image-title {
+        text-align: end;
+    }
+}
+@media (width < 480px) {
+    .hero-wrapper .image-title {
+        top: unset;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 2rem;
+    }
+}
 .dual-hero-block .hero-wrapper a {
     background: var(--primary);
     color: var(--secondary);
@@ -45,6 +78,7 @@
     justify-content: flex-start;
     transition: all 0.2s ease-in-out;
 }
+
 .dual-hero-block .left-hero-wrapper a {
     right: 10%;
 }
@@ -87,9 +121,11 @@
   class="dual-hero-block"
 >
     <div class="hero-wrapper left-hero-wrapper">
-        <a href="{{ section.settings.link_left }}">
-          <span>{{ section.settings.link_label_left }}</span>
-        </a>
+        {% if section.settings.link_left and section.settings.link_label_left %}
+            <a href="{{ section.settings.link_left }}">
+            <span>{{ section.settings.link_label_left }}</span>
+            </a>
+        {% endif %}
         <div class="media">
             {{
             section.settings.image_left
@@ -97,11 +133,14 @@
             | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
             }}
         </div>
+        <div class="image-title">{{ section.settings.image_title_left }}</div>
     </div>
     <div class="hero-wrapper right-hero-wrapper">
-        <a href="{{ section.settings.link_right }}">
-          <span>{{ section.settings.link_label_right }}</span>
-        </a>
+        {% if section.settings.link_right and section.settings.link_label_right %}
+            <a href="{{ section.settings.link_right }}">
+                <span>{{ section.settings.link_label_right }}</span>
+            </a>
+        {% endif %}
         <div class="media">
             {{
             section.settings.image_right
@@ -109,6 +148,7 @@
             | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
             }}
         </div>
+        <div class="image-title">{{ section.settings.image_title_right }}</div>
 
     </div>
 
