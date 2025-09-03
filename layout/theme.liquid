@@ -222,6 +222,17 @@
         --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
       }
 
+      @media (width < 1200px) {
+        :root {
+          --font-heading-scale: {{ settings.heading_scale | times: 0.8 | divided_by: settings.body_scale }};
+        }
+      }
+      @media (width < 768px) {
+        :root {
+          --font-heading-scale: {{ settings.heading_scale | times: 0.9 | divided_by: settings.body_scale }};
+        }
+      }
+
       *,
       *::before,
       *::after {

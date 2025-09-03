@@ -9,6 +9,9 @@
   display: flex;
   flex: 1;
 }
+.accordion .summary__title h2 {
+  font-size: var(--subheading-font-size, 1.8rem);
+}
 
 .accordion .summary__title + .icon-caret, .accordion .summary__title + .tgot-icon-plus {
   height: calc(var(--font-heading-scale) * 0.6rem);

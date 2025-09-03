@@ -1507,8 +1507,12 @@ a.product__text {
   gap: 2rem;
 }
 
+/* does not work excluding first item? */
 .product__description-additional:not(:first-of-type) {
   display: none;
+}
+#content-authenticity {
+  display: flex;
 }
 
 .product__description-additional > div > p:first-of-type,
@@ -1526,7 +1530,7 @@ a.product__text {
   padding: 8rem 0 5rem 0;
   display: flex;
   flex-direction: column;
-  gap: 10rem;
+  gap: 5rem;
 }
 .product__description-additional-tab-menu-wrapper {
   border-top: 1px solid rgba(var(--color-foreground), 0.2);
@@ -1546,17 +1550,15 @@ a.product__text {
 
 }
 
-
-
 .product__description-additional-tab-menu-wrapper > .product__description-additional-tab-menu > li {
-  font-size: 2rem;
+  font-size: var(--subheading-font-size, 1.8rem);
   font-family: var(--font-heading-family);
   opacity: 0.25;
   width: fit-content;
-  line-height: 3.75rem;
+  line-height: 1.8;
   transition: all 0.2s ease-in-out;
   border-bottom: 2px solid transparent;
-  padding: 1.5rem 0;
+  padding: 1.25rem 0;
 }
 
 .product__description-additional-tab-menu-wrapper > .product__description-additional-tab-menu > li:hover {
@@ -1568,4 +1570,85 @@ a.product__text {
   color: var(--primary);
   opacity: 1;
   border-color: var(--primary);
+}
+
+
+
+
+@media screen and (max-width: 749px) {
+  .product__description-additional-tab-container {
+    padding-top: 3rem;
+  }
+
+  .product__description-additional-tab-menu-wrapper {
+    --constraint: 2rem;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product__description-additional-tab-menu-wrapper > .product__description-additional-tab-menu {
+    padding: 0;
+    display: flex;
+    gap: 3rem;
+    overflow-x: auto;
+    /* Ermöglicht das horizontale Scrollen */
+    -webkit-overflow-scrolling: touch;
+    /* Für sanftes Scrollen auf mobilen Geräten */
+    scrollbar-width: none;
+  }
+
+  .product__description-additional-tab-menu-wrapper > .product__description-additional-tab-menu::-webkit-scrollbar {
+    display: none;
+    /* Versteckt die Scrollbar in Chrome, Safari und anderen WebKit-basierten Browsern */
+  }
+
+  .product__description-additional-tab-menu-wrapper > .product__description-additional-tab-menu::after,
+  .product__description-additional-tab-menu-wrapper > .product__description-additional-tab-menu::before {
+    content: '';
+    height: 65px;
+    position: absolute;
+    pointer-events: none;
+    /* Stellt sicher, dass der Fade-Effekt nicht scrollbar ist */
+    z-index: 2;
+  }
+
+  .product__description-additional-tab-menu-wrapper > .product__description-additional-tab-menu::after {
+    right: 0;
+    padding-left: var(--constraint);
+    /* Breite des Fades */
+    background: linear-gradient(
+      to left,
+      rgb(var(--color-background)),
+      rgb(var(--color-background)),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .product__description-additional-tab-menu-wrapper > .product__description-additional-tab-menu::before {
+    left: 0;
+    padding-left: var(--constraint);
+    /* Breite des Fades */
+
+    background: linear-gradient(
+      to right,
+      rgb(var(--color-background)),
+      rgb(var(--color-background)),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .product__description-additional-tab-menu-wrapper > .product__description-additional-tab-menu > li:first-of-type {
+    margin-left: calc(var(--constraint) * 2);
+  }
+
+  .product__description-additional-tab-menu-wrapper > .product__description-additional-tab-menu > li:last-of-type {
+    margin-right: calc(var(--constraint) + 1rem);    
+  }
+
+  .product__description-additional {
+    margin-top: 3.5rem;
+    gap: 1rem;
+  }
+
 }

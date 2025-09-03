@@ -1,5 +1,6 @@
 .related-products {
   display: block;
+  border-top: 1px solid rgba(var(--color-foreground), 0.2);
 }
 
 .related-products__heading {
