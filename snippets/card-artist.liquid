@@ -30,7 +30,12 @@
 -%}
 
 <div class="card-wrapper animate-arrow {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% else %}collection-card-wrapper{% endif %}">
-  <div
+    {%- if show_overlay and artist.description != blank -%}
+      <div class="card__description">
+          {{ artist.description | metafield_tag | strip_html | escape | truncate: 400 }}
+      </div>
+    {% endif %}
+    <div
     class="
       card
       card--{{ card_style }}

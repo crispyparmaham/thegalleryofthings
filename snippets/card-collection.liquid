@@ -32,6 +32,11 @@
 -%}
 
 <div class="card-wrapper animate-arrow {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% else %}collection-card-wrapper{% endif %}">
+  {%- if show_overlay and card_collection.description != blank -%}
+    <div class="card__description">
+        {{ card_collection.description | strip_html | escape | truncate: 400  }}
+    </div>
+  {% endif %}
   <div
     class="
       card
