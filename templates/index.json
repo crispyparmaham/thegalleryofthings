@@ -60,6 +60,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
+        "line_on_bottom": true,
         "columns_desktop": 3,
         "enable_desktop_slider": false,
         "full_width": false,
@@ -72,10 +73,10 @@
         "show_vendor": true,
         "show_rating": false,
         "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 44,
+        "padding_bottom": 88
       }
     },
     "featured_collection": {
@@ -88,6 +89,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
+        "line_on_bottom": false,
         "columns_desktop": 4,
         "enable_desktop_slider": false,
         "full_width": false,
@@ -100,10 +102,10 @@
         "show_vendor": true,
         "show_rating": false,
         "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
         "padding_top": 44,
-        "padding_bottom": 36
+        "padding_bottom": 88
       }
     },
     "multicolumn_itTMfq": {
@@ -185,10 +187,12 @@
         "image_title_left": "Alexandra Mann, Galeristin hinter The Gallery of Things",
         "link_label_left": "<strong>KONTAKT</strong> zum Vernetzen  und Kunstwerke anfragen",
         "link_left": "shopify://pages/contact",
+        "contact_slide_out_left": true,
         "image_right": "shopify://shop_images/galerie-tgot-zehlendorf.png",
         "image_title_right": "Die Galerie in Berlin Zehlendorf",
         "link_label_right": "<strong>ALLE INFOS</strong> zur Galerie",
-        "link_right": "shopify://pages/uber"
+        "link_right": "shopify://pages/uber",
+        "contact_slide_out_right": false
       }
     }
   },

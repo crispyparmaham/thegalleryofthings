@@ -308,6 +308,10 @@
   margin-top: 0;
   margin-bottom: 0;
   font-size: 2.25rem;
+
+  @media (width < 768px) {
+    font-size: 1.7rem;
+  }
 }
 
 .card__heading:last-child {

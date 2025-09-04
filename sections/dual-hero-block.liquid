@@ -60,7 +60,7 @@
         padding: 2rem;
     }
 }
-.dual-hero-block .hero-wrapper a {
+.dual-hero-block .hero-wrapper .link-box {
     background: var(--primary);
     color: var(--secondary);
     padding: 1rem 2rem;
@@ -80,20 +80,20 @@
     transition: all 0.2s ease-in-out;
 }
 
-.dual-hero-block .left-hero-wrapper a {
+.dual-hero-block .left-hero-wrapper .link-box {
     right: 10%;
 }
-.dual-hero-block .right-hero-wrapper a {
+.dual-hero-block .right-hero-wrapper .link-box {
     left: 10%;
 }
 @media (width < 992px) {
-    .dual-hero-block .left-hero-wrapper a {
+    .dual-hero-block .left-hero-wrapper .link-box {
         right: unset;
         left: 10%;
     }
 }
 @media (width < 480px) {
-    .dual-hero-block .left-hero-wrapper a, .dual-hero-block .right-hero-wrapper a {
+    .dual-hero-block .left-hero-wrapper .link-box, .dual-hero-block .right-hero-wrapper .link-box {
         right: 2rem;
         left: 2rem;
         max-width: 100%;
@@ -101,11 +101,52 @@
     }
 }
 
-.dual-hero-block .hero-wrapper a:hover {
+.dual-hero-block .hero-wrapper .link-box:not(:has(.contact-slide-out)):hover,
+.dual-hero-block .hero-wrapper .link-box:not(:has(.contact-slide-out)):focus-within {
     background: var(--secondary);
     color: var(--primary);
 }
 
+.dual-hero-block .hero-wrapper .link-box:has(.contact-slide-out) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    cursor: pointer;
+}
+.dual-hero-block .hero-wrapper .link-box .contact-slide-out {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+.dual-hero-block .hero-wrapper .link-box:hover .contact-slide-out,
+.dual-hero-block .hero-wrapper .link-box:focus-within .contact-slide-out {
+    display: flex;
+    padding-bottom: 1rem;
+}
+.dual-hero-block .hero-wrapper .link-box .contact-slide-out a {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    color: var(--secondary);
+    text-decoration: none;
+    font-family: var(--font-heading-family);
+}
+.dual-hero-block .hero-wrapper .link-box .contact-slide-out a .svg-wrapper {
+    transition: all 0.3s ease-in-out;
+}
+.dual-hero-block .hero-wrapper .link-box .contact-slide-out a:hover,
+.dual-hero-block .hero-wrapper .link-box .contact-slide-out a:focus-within {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.dual-hero-block .hero-wrapper .link-box .contact-slide-out a:hover .svg-wrapper,
+.dual-hero-block .hero-wrapper .link-box .contact-slide-out a:focus-within .svg-wrapper {
+    scale: 1.1;
+}
 {%- endstyle -%}
 
 
@@ -123,9 +164,35 @@
 >
     <div class="hero-wrapper left-hero-wrapper">
         {% if section.settings.link_left and section.settings.link_label_left %}
-            <a href="{{ section.settings.link_left }}">
-            <span>{{ section.settings.link_label_left }}</span>
-            </a>
+            {% if section.settings.contact_slide_out_left %}
+                <div class="link-box">
+                <span>{{ section.settings.link_label_left }}</span>
+                    <div class="contact-slide-out">
+                        <a href="https://wa.me/{{ settings.whatsapp_number }}" target="_blank">
+                            <span class="svg-wrapper">
+                            {{- 'icon-tgot-whatsapp.svg' | inline_asset_content -}}
+                            </span>
+                            WhatsApp
+                        </a>
+                        <a href="mailto:{{ settings.email_address }}">
+                            <span class="svg-wrapper">
+                            {{- 'icon-tgot-email.svg' | inline_asset_content -}}
+                            </span>
+                            E-Mail
+                        </a>
+                        <a href="tel:{{ settings.phone_number }}">
+                            <span class="svg-wrapper">
+                            {{- 'icon-tgot-phone.svg' | inline_asset_content -}}
+                            </span>
+                            Telefon
+                        </a>
+                    </div>
+                </div>
+            {% else %}
+                <a class="link-box"href="{{ section.settings.link_left }}">
+                    <span>{{ section.settings.link_label_left }}</span>
+                </a>
+            {% endif %}
         {% endif %}
         <div class="media">
             {{
@@ -138,9 +205,35 @@
     </div>
     <div class="hero-wrapper right-hero-wrapper">
         {% if section.settings.link_right and section.settings.link_label_right %}
-            <a href="{{ section.settings.link_right }}">
-                <span>{{ section.settings.link_label_right }}</span>
-            </a>
+             {% if section.settings.contact_slide_out_right %}
+                <div class="link-box">
+                    <span>{{ section.settings.link_label_right }}</span>
+                    <div class="contact-slide-out">
+                        <a href="https://wa.me/{{ settings.whatsapp_number }}" target="_blank">
+                            <span class="svg-wrapper">
+                            {{- 'icon-tgot-whatsapp.svg' | inline_asset_content -}}
+                            </span>
+                            WhatsApp
+                        </a>
+                        <a href="mailto:{{ settings.email_address }}">
+                            <span class="svg-wrapper">
+                            {{- 'icon-tgot-email.svg' | inline_asset_content -}}
+                            </span>
+                            E-Mail
+                        </a>
+                        <a href="tel:{{ settings.phone_number }}">
+                            <span class="svg-wrapper">
+                            {{- 'icon-tgot-phone.svg' | inline_asset_content -}}
+                            </span>
+                            Telefon
+                        </a>
+                    </div>
+                </div>
+            {% else %}
+                <a class="link-box" href="{{ section.settings.link_right }}">
+                    <span>{{ section.settings.link_label_right }}</span>
+                </a>
+            {% endif %}
         {% endif %}
         <div class="media">
             {{
@@ -191,6 +284,12 @@
           "label": "Linkbeschriftung links"
         },
         {
+            "type": "checkbox",
+            "id": "contact_slide_out_left",
+            "default": false,
+            "label": "Aktiviere Kontakt-Slideout (Links zu Whatsapp, E-Mail, Telefon)"
+        },
+        {
         "type": "header",
         "content": "Bild rechts"
         },
@@ -214,7 +313,13 @@
           "type": "url",
           "id": "link_right",
           "label": "Linkbeschriftung rechts"
-        }
+        },
+        {
+            "type": "checkbox",
+            "id": "contact_slide_out_right",
+            "default": false,
+            "label": "Aktiviere Kontakt-Slideout (Links zu Whatsapp, E-Mail, Telefon)"
+        },
     ],
     "presets": [
     ]

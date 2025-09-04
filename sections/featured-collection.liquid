@@ -36,6 +36,9 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  .has-bottom-line {
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.2);
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -65,7 +68,7 @@
 -%}
 
 <div
-  class="color-{{ section.settings.color_scheme }} isolate gradient"
+  class="color-{{ section.settings.color_scheme }} isolate gradient {% if section.settings.line_on_bottom %} has-bottom-line{% endif %}"
 >
   <div
     class="collection{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}"
@@ -306,6 +309,12 @@
       ],
       "default": "body"
     },
+    {
+      "type": "checkbox",
+      "id": "line_on_bottom",
+      "default": false,
+      "label": "Zeige Trennlinie unter Abschnitt an"
+    },        
     {
       "type": "header",
       "content": "t:sections.featured-collection.settings.header_collection.content"

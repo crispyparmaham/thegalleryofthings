@@ -48,12 +48,13 @@
     {% if product %}
       <li class="grid__item">
         {% render 'card-product',
-          card_product: product,
-          media_aspect_ratio: section.settings.image_ratio,
-          image_shape: section.settings.image_shape,
-          show_secondary_image: section.settings.show_secondary_image,
-          show_vendor: section.settings.show_vendor,
-          show_rating: section.settings.show_rating
+            card_product: product,
+            media_aspect_ratio: 1,
+            image_shape: section.settings.image_shape,
+            show_secondary_image: section.settings.show_secondary_image,
+            show_vendor: section.settings.show_vendor,
+            show_rating: section.settings.show_rating,
+            skip_styles: false
         %}
       </li>
     {% endif %}
