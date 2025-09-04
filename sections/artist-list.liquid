@@ -48,6 +48,11 @@
   assign show_mobile_slider = false
   
   assign all_artists = shop.metaobjects.artists.values
+
+  assign max_columns_to_show = columns_mobile_int
+  if section.settings.columns_desktop > columns_mobile_int
+    assign max_columns_to_show = section.settings.columns_desktop
+  endif
   
   if section.settings.swipe_on_mobile and number_of_artists > columns_mobile_int
     assign show_mobile_slider = true
@@ -105,6 +110,7 @@
         id="Slider-{{ section.id }}"
         role="list"
       >
+
         {% assign artists_to_display = shop.metaobjects.artists.values %}
         {%- for artist in artists_to_display -%}
           <li
@@ -115,7 +121,7 @@
               style="--animation-order: {{ forloop.index }};"
             {% endif %}
           >
-            <a href="{{ artist.url }}" class="artist-card">
+            {% comment %} <a href="{{ artist.url }}" class="artist-card">
               <div class="card-wrapper underline-links-hover">
                 <div class="card card--{{ settings.card_style }}{% if artist.image.value != blank %} card--media{% else %} card--text{% endif %}{% if settings.card_style == 'card' %} color-{{ settings.card_color_scheme }} gradient{% endif %}" style="--ratio-percent: {% if section.settings.image_ratio == 'adapt' %}100%{% elsif section.settings.image_ratio == 'portrait' %}125%{% elsif section.settings.image_ratio == 'square' %}100%{% endif %};">
                   <div class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if artist.image.value != blank %} ratio{% endif %}" style="--ratio-percent: {% if section.settings.image_ratio == 'adapt' %}100%{% elsif section.settings.image_ratio == 'portrait' %}125%{% elsif section.settings.image_ratio == 'square' %}100%{% endif %};">
@@ -155,7 +161,16 @@
                   </div>
                 </div>
               </div>
-            </a>
+            </a> {% endcomment %}
+
+            {% render 'card-artist',
+              artist: artist,
+              media_aspect_ratio: section.settings.image_ratio,
+              extend_height: true,
+              wrapper_class: 'product-card-wrapper',
+              columns: section.settings.columns_desktop
+            %}
+
           </li>
         {%- endfor -%}
       </ul>

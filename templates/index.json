@@ -51,6 +51,7 @@
     },
     "featured_collection_rJNprK": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "collection": "spotlight",
@@ -71,6 +72,57 @@
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": true,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 44,
+        "padding_bottom": 88
+      }
+    },
+    "spotlight_kc46WQ": {
+      "type": "spotlight",
+      "blocks": {
+        "product_pg8bVH": {
+          "type": "product",
+          "settings": {
+            "product": "pharao-2"
+          }
+        },
+        "artist_qpnrh4": {
+          "type": "artist",
+          "settings": {
+            "artist": "daniela-luschin"
+          }
+        },
+        "collection_EpCxcD": {
+          "type": "collection",
+          "settings": {
+            "collection": "shevolution-kunst-ist-wandel"
+          }
+        }
+      },
+      "block_order": [
+        "product_pg8bVH",
+        "artist_qpnrh4",
+        "collection_EpCxcD"
+      ],
+      "name": "Spotlight",
+      "settings": {
+        "items_to_show": 3,
+        "title": "Spotlight",
+        "heading_size": "h1",
+        "description": "",
+        "description_style": "body",
+        "line_on_bottom": true,
+        "columns_desktop": 3,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "1",
@@ -199,6 +251,7 @@
   "order": [
     "image_banner",
     "featured_collection_rJNprK",
+    "spotlight_kc46WQ",
     "featured_collection",
     "multicolumn_itTMfq",
     "rich_text_ddmBzc",

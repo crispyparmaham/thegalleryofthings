@@ -1,0 +1,147 @@
+{%- comment -%}
+  Artist Card Template - basiert exakt auf card-collection.liquid Struktur
+  
+  Accepts:
+  - artist: {Object} Artist metaobject
+  - media_aspect_ratio: {String} Size of the image ('adapt', 'portrait', 'square')
+  - columns: {Number} Number of columns for responsive sizing
+  - extend_height: {Boolean} Card height extends to available container space. Default: false (optional)
+  - wrapper_class: {String} Wrapper class for card (optional)
+  - placeholder_image: {String} Placeholder image when artist is empty (optional)
+{%- endcomment -%}
+
+{%- liquid
+  assign ratio = 1
+  assign artist_image = artist.image.value
+  if artist_image and media_aspect_ratio == 'portrait'
+    assign ratio = 0.8
+  elsif artist_image and media_aspect_ratio == 'adapt'
+    assign ratio = artist_image.aspect_ratio
+  endif
+  if ratio == 0 or ratio == null
+    assign ratio = 1
+  endif
+  assign card_color_scheme = settings.card_color_scheme
+  assign card_style = settings.card_style
+  if wrapper_class == null or wrapper_class == 'none'
+    assign card_color_scheme = settings.collection_card_color_scheme
+    assign card_style = settings.collection_card_style
+  endif
+-%}
+
+<div class="card-wrapper animate-arrow {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% else %}collection-card-wrapper{% endif %}">
+  <div
+    class="
+      card
+      card--{{ card_style }}
+      {% if artist_image %} card--media{% else %} card--text{% endif %}
+      {% if card_style == 'card' %} color-{{ card_color_scheme }} gradient{% endif %}
+      {% if extend_height %} card--extend-height{% endif %}
+      {% if artist_image == nil and card_style == 'card' %} ratio{% endif %}
+    "
+    style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+  >
+    <div
+      class="card__inner {% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}{% if artist_image or card_style == 'standard' %} ratio{% endif %}"
+      style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+    >
+      {%- if artist_image -%}
+        <div class="card__media">
+          <div class="media media--transparent media--hover-effect">
+            <img
+              srcset="
+                {%- if artist_image.width >= 165 -%}{{ artist_image | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if artist_image.width >= 330 -%}{{ artist_image | image_url: width: 330 }} 330w,{%- endif -%}
+                {%- if artist_image.width >= 535 -%}{{ artist_image | image_url: width: 535 }} 535w,{%- endif -%}
+                {%- if artist_image.width >= 750 -%}{{ artist_image | image_url: width: 750 }} 750w,{%- endif -%}
+                {%- if artist_image.width >= 1000 -%}{{ artist_image | image_url: width: 1000 }} 1000w,{%- endif -%}
+                {%- if artist_image.width >= 1500 -%}{{ artist_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                {%- if artist_image.width >= 3000 -%}{{ artist_image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                {{ artist_image | image_url }} {{ artist_image.width }}w
+              "
+              src="{{ artist_image | image_url: width: 1500 }}"
+              sizes="
+                (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: columns }}px,
+                (min-width: 750px) {% if columns > 1 %}calc((100vw - 10rem) / 2){% else %}calc(100vw - 10rem){% endif %},
+                calc(100vw - 3rem)
+              "
+              alt="{{ artist_image.alt | default: artist.name.value | escape }}"
+              height="{{ artist_image.height }}"
+              width="{{ artist_image.width }}"
+              loading="lazy"
+              class="motion-reduce"
+            >
+          </div>
+        </div>
+      {%- endif -%}
+      {%- if artist == blank -%}
+        <div class="card__media">
+          {{ placeholder_image | default: 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {%- else -%}
+        <div class="card__content">
+          <div class="card__information">
+            <h3 class="card__heading">
+              <a
+                {% if artist == blank %}
+                  role="link" aria-disabled="true"
+                {% else %}
+                    href="{{ artist.system.url | default: '#' }}"
+                {% endif %}
+                class="full-unstyled-link"
+              >
+                {%- if artist.name.value != blank -%}
+                  {{- artist.name.value | escape -}}
+                {%- else -%}
+                  Künstler*in
+                {%- endif -%}
+                <span class="icon-wrap">
+                  {{- 'icon-arrow.svg' | inline_asset_content -}}
+                </span>
+              </a>
+            </h3>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+    {%- if artist != blank and card_style == 'card' or artist_image -%}
+      <div class="card__content">
+        <div class="card__information">
+          <h3 class="card__heading">
+            <a
+              {% if artist == blank %}
+                role="link" aria-disabled="true"
+              {% else %}
+                href="{{ artist.system.url| default: '#' }}"
+              {% endif %}
+              class="full-unstyled-link"
+            >
+              {%- if artist.name.value != blank -%}
+                {{- artist.name.value | escape -}}
+              {%- else -%}
+                Künstler*in
+              {%- endif -%}
+              <span class="icon-wrap">
+                {{- 'icon-arrow.svg' | inline_asset_content -}}
+              </span>
+            </a>
+          </h3>
+        </div>
+      </div>
+    {%- endif -%}
+    {%- if artist == blank -%}
+      <div class="card__content">
+        <div class="card__information">
+          <h3 class="card__heading card__heading--placeholder">
+            <a role="link" aria-disabled="true" class="full-unstyled-link">
+              Künstler*in
+              <span class="icon-wrap">
+                {{- 'icon-arrow.svg' | inline_asset_content -}}
+              </span>
+            </a>
+          </h3>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</div>

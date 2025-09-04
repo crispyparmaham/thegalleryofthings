@@ -184,7 +184,7 @@
         "max": 40,
         "step": 4,
         "default": 8,
-        "unit": "px",
+        "unit": "rem",
         "label": "t:settings_schema.layout.settings.spacing_grid_horizontal.label"
       },
       {
@@ -194,7 +194,7 @@
         "max": 40,
         "step": 4,
         "default": 8,
-        "unit": "px",
+        "unit": "rem",
         "label": "t:settings_schema.layout.settings.spacing_grid_vertical.label"
       }
     ]
