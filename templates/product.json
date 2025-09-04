@@ -115,12 +115,31 @@
         "show_vendor": false,
         "show_rating": false,
         "padding_top": 44,
-        "padding_bottom": 28
+        "padding_bottom": 44
+      }
+    },
+    "recently-viewed-products": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "heading": "Zuletzt angesehene Produkte",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 44,
+        "padding_bottom": 44
       }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "related-products",
+    "recently-viewed-products"
   ]
 }
