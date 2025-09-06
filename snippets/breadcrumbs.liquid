@@ -24,7 +24,7 @@
         {%- if collection.id -%}
           {%- assign product_collection = collection -%}
         {%- endif -%}
-        
+
         {%- comment -%} 2. Falls nicht, verwende erste verfügbare Collection des Produkts {%- endcomment -%}
         {%- unless product_collection -%}
           {%- for col in product.collections -%}
@@ -48,7 +48,21 @@
         <li class="breadcrumbs__item">
           <a class="breadcrumbs__link" href="{{ product.url }}" aria-current="page">{{ product.title }}</a>
         </li>
-      {%- when 'collection' and collection.handle -%}
+
+      {%- when 'collection' %}
+
+          {%- assign parent_collection = collection.metafields.custom.parent-collection-page -%}
+          {%- assign parent_collection_page = pages[parent_collection] -%}
+
+          {%- if parent_collection_page -%}
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="{{ parent_collection_page.url }}">{{ parent_collection_page.title }}</a>
+            </li>
+          {%- endif -%}
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="{{ collection.url }}" aria-current="page">{{ collection.title }}</a>
+          </li>
+      {% comment %} {%- when 'collection' and collection.handle -%}
         {%- if current_tags -%}
           <li class="breadcrumbs__item">
             <a class="breadcrumbs__link" href="{{ collection.url }}">{{ collection.title }}</a>
@@ -61,7 +75,9 @@
           <li class="breadcrumbs__item">
             <a class="breadcrumbs__link" href="{{ collection.url }}" aria-current="page">{{ collection.title }}</a>
           </li>
-        {%- endif -%}
+        {%- endif -%} {% endcomment %}
+
+
       {%- when 'blog' -%}
         {%- if current_tags -%}
           <li class="breadcrumbs__item">
