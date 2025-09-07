@@ -2556,6 +2556,8 @@ input[type='checkbox'] {
 
 .header__icon {
   color: rgb(var(--color-foreground));
+  border-radius: 100rem;
+  transition: all 0.1s ease-in-out;
 }
 
 .header__icon span {
@@ -2575,6 +2577,12 @@ input[type='checkbox'] {
 .modal__close-button:hover .icon {
   transform: scale(1.07);
 }
+
+.header__icon:hover {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
 
 .header__icon .icon {
   height: 2rem;
