@@ -139,7 +139,7 @@
         "unit_price": "Grundpreis"
       },
       "share": "Dieses Produkt teilen",
-      "sold_out": "Ausverkauft",
+      "sold_out": "Verkauft",
       "unavailable": "Nicht verfügbar",
       "vendor": "Anbieter",
       "video_exit_message": "{{ title }} öffnet das Video auf derselben Seite im Vollbildmodus.",
