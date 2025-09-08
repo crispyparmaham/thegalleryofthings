@@ -15,14 +15,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
+            "heading": "Entdecken Sie unsere aktuellen Werke",
             "heading_size": "h0"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "Alle Werke ansehen",
             "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": true,
             "button_label_2": "",

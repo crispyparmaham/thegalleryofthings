@@ -1338,13 +1338,13 @@ button.shopify-payment-button__button--unbranded {
 
 
 .button.product-form__submit, .button.cart__checkout-button {
-  --color-button: var(--cta);
-  --color-button-text: var(--secondary);
+  background: var(--cta);
+  color: var(--secondary);
 }
 .product-form__submit:hover, .cart__checkout-button:hover,
 .product-form__submit:focus-within, .cart__checkout-button:focus-within {
-  --color-button: var(--secondary);
-  --color-button-text: var(--primary);
+  background: var(--primary);
+  color: var(--secondary);
 }
 
 
