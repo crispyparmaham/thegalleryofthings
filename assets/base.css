@@ -1204,19 +1204,28 @@ deferred-media {
 
 /* component-button */
 /* Button - default */
-
+.button--primary {
+  color: var(--secondary);
+  background: var(--primary);
+  border-color: currentColor;
+}
 .button--secondary,
 .button--tertiary {
-  --color-button: transparent;
-  --color-button-text: var(--secondary);
+  color: var(--secondary);
+  background: transparent;
+  --color-button-text: currentcolor;
   /* --color-button: var(--color-secondary-button);
   --color-button-text: var(--color-secondary-button-text); */
 }
+.button--secondary {
+  border-color: currentcolor;
+  border: 1px solid currentcolor;
+}
 
-.button--tertiary {
+/* .button--tertiary {
   --alpha-button-background: 0;
   --alpha-button-border: 0.2;
-}
+} */
 
 .button,
 .shopify-challenge__button,
@@ -1248,10 +1257,11 @@ button.shopify-payment-button__button--unbranded {
   justify-content: center;
   align-items: center;
   border: 0;
-  padding: 0 3rem;
+  padding: 1.25rem 3rem;
   cursor: pointer;
   font: inherit;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
+  font-size: var(--subheading-font-size, 1.8rem);
   text-decoration: none;
   color: var(--color-button-text);
   transition: all var(--duration-short) ease;
@@ -1269,10 +1279,16 @@ button.shopify-payment-button__button--unbranded {
   color: var(--color-button);
 }
 
+.button--primary:hover, .button--primary:focus-within {
+  color: var(--primary);
+  background: var(--secondary);
+  border-color: currentColor;
+}
 .button--secondary:hover, .button--secondary:focus-within,
 .button--tertiary:hover, .button--tertiary:focus-within {
-  --color-button: var(--secondary);
-  --color-button-text: var(--primary);
+  color: var(--secondary);
+  background: var(--primary);
+  border-color: var(--primary);
 
 }
 
@@ -1362,7 +1378,7 @@ button.shopify-payment-button__button--unbranded {
 .button-label,
 .shopify-challenge__button,
 .customer button {
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   letter-spacing: 0.1rem;
   line-height: calc(1 + 0.2 / var(--font-body-scale));
 }
