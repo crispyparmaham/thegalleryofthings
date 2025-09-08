@@ -186,9 +186,9 @@
         "price_at_each_html": "bei {{ price }}/Stück"
       },
       "product_variants": "Produktvarianten",
-      "taxes_included": "Inkl. Steuern.",
-      "duties_included": "Inkl. Zollgebühren.",
-      "duties_and_taxes_included": "Inkl. Zollgebühren und Steuern."
+      "taxes_included": "inkl. MwSt., zzgl. Versand",
+      "duties_included": "inkl. Zollgebühren.",
+      "duties_and_taxes_included": "inkl. Zollgebühren und Steuern."
     },
     "modal": {
       "label": "Medien-Galerie"

@@ -380,6 +380,7 @@ blockquote {
   font-size: 1.25rem;
   letter-spacing: 0.07rem;
   line-height: calc(1 + 0.7 / var(--font-body-scale));
+  opacity: 0.8;
 }
 
 @media screen and (min-width: 750px) {

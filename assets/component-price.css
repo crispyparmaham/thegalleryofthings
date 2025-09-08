@@ -1,3 +1,17 @@
+.price-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.price-row:has(.price--sold-out) {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .price {
   font-size: 1.75rem;
   letter-spacing: 0.1rem;
