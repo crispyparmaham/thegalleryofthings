@@ -58,10 +58,14 @@
   margin-top: 0;
   margin-bottom: 0;
   padding: 0;
-  --grid-desktop-horizontal-spacing: 16rem;
+  --grid-desktop-horizontal-spacing: 24rem;
   --grid-desktop-vertical-spacing: 8rem;
   --grid-mobile-horizontal-spacing: 4rem;
   --grid-mobile-vertical-spacing: 4rem;
+
+  @media (width < 1200px) {
+      --grid-desktop-horizontal-spacing: 12rem;
+  }
 }
 
 .multicolumn-list__item:only-child {
