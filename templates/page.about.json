@@ -1,0 +1,139 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_with_text_346rBD": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_TAHm7k": {
+          "type": "heading",
+          "settings": {
+            "heading": "Alexandra Mann und The Gallery of Things",
+            "heading_size": "h2"
+          }
+        },
+        "text_fYpgzG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Hallo, ich bin Alexandra Mann M.A., die leidenschaftliche Galeristin hinter The Gallery of Things, die sich feministischer, aktivistischer und nachhaltiger Kunst widmet.</p><p>Besuchen Sie gerne meine Webseite, um mehr über The Gallery of Things und aktuelle Ausstellungen zu erfahren. </p>",
+            "text_style": "body"
+          }
+        },
+        "button_JKNaVc": {
+          "type": "button",
+          "settings": {
+            "button_label": "Zur Webseite",
+            "button_link": "https://thegalleryofthings.com/",
+            "button_style_secondary": true,
+            "external_link": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_TAHm7k",
+        "text_fYpgzG",
+        "button_JKNaVc"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/241113_GalleryOfThings_0012_klein-1.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collage_WeQDVb": {
+      "type": "collage",
+      "blocks": {
+        "image_jbGREc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/38_Isabell-Kessler_Alexandra_Mann_web_0468-e1733233280801.jpg"
+          }
+        },
+        "image_786dJq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/galerie-tgot-zehlendorf.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_jbGREc",
+        "image_786dJq"
+      ],
+      "name": "t:sections.collage.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "desktop_layout": "right",
+        "mobile_layout": "column",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collage_EFgJ3q": {
+      "type": "collage",
+      "blocks": {
+        "image_aFp4c3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/241113_GalleryOfThings_0125_klein-2.jpg"
+          }
+        },
+        "image_g8rm98": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/09_Isabell-Kessler_Alexandra_Mann_web_0111.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_aFp4c3",
+        "image_g8rm98"
+      ],
+      "name": "t:sections.collage.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "desktop_layout": "left",
+        "mobile_layout": "collage",
+        "card_styles": "product-card-wrapper",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_346rBD",
+    "collage_WeQDVb",
+    "collage_EFgJ3q"
+  ]
+}

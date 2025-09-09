@@ -5,6 +5,24 @@
   justify-content: flex-start;
   align-items: baseline;
 }
+.price-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.price-column .price {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:1rem;
+}
+
+s.price-item {
+  margin-right: 0;
+}
 
 .price-row:has(.price--sold-out) {
   justify-content: center;
