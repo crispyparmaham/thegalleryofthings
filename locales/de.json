@@ -185,7 +185,7 @@
         "price_range": "{{ minimum }}–{{ maximum }}",
         "price_at_each_html": "bei {{ price }}/Stück"
       },
-      "product_variants": "Produktvarianten",
+      "product_variants": "Werkvarianten",
       "taxes_included": "inkl. MwSt., zzgl. Versand",
       "duties_included": "inkl. Zollgebühren.",
       "duties_and_taxes_included": "inkl. Zollgebühren und Steuern."
@@ -207,12 +207,12 @@
       },
       "max_price": "Der höchste Preis ist {{ price }}",
       "product_count": {
-        "one": "{{ product_count }} von {{ count }} Produkt",
-        "other": "{{ product_count }} von {{ count }} Produkten"
+        "one": "{{ product_count }} von {{ count }} Werk",
+        "other": "{{ product_count }} von {{ count }} Werke"
       },
       "product_count_simple": {
-        "one": "{{ count }} Produkt",
-        "other": "{{ count }} Produkte"
+        "one": "{{ count }} Werk",
+        "other": "{{ count }} Werke"
       },
       "reset": "Zurücksetzen",
       "sort_button": "Sortieren",
@@ -234,7 +234,7 @@
       },
       "title": "Suchergebnisse",
       "page": "Seite",
-      "products": "Produkte",
+      "products": "Werke",
       "search_for": "Nach \"{{ terms }}\" suchen",
       "results_with_count_and_term": {
         "one": "{{ count }} Ergebnis für \"{{ terms }}\" gefunden",
@@ -249,8 +249,8 @@
         "other": "{{ count }} Vorschläge"
       },
       "results_products_with_count": {
-        "one": "{{ count }} Produkt",
-        "other": "{{ count }} Produkte"
+        "one": "{{ count }} Werk",
+        "other": "{{ count }} Werke"
       },
       "suggestions": "Vorschläge",
       "pages": "Seiten"
@@ -294,11 +294,11 @@
       "cart_error": "Beim Aktualisieren deines Warenkorbs ist ein Fehler aufgetreten. Bitte versuche es erneut.",
       "cart_quantity_error_html": "Du kannst deinem Warenkorb nur {{ quantity }} Stück dieses Artikels hinzufügen.",
       "headings": {
-        "product": "Produkt",
+        "product": "Werk",
         "price": "Preis",
         "total": "Gesamtsumme",
         "quantity": "Anzahl",
-        "image": "Produktbild"
+        "image": "Werkbild"
       },
       "update": "Aktualisieren",
       "login": {
@@ -369,10 +369,10 @@
       "announcement_bar": "Ankündigungsleiste"
     },
     "quick_order_list": {
-      "product_total": "Produktzwischensumme",
+      "product_total": "Zwischensumme",
       "view_cart": "Warenkorb ansehen",
       "each": "{{ money }}/Stück",
-      "product": "Produkt",
+      "product": "Werk",
       "variant": "Variante",
       "variant_total": "Varianten insgesamt",
       "items_added": {
@@ -383,7 +383,7 @@
         "one": "{{ quantity }} Artikel entfernt",
         "other": "{{ quantity }} Artikel entfernt"
       },
-      "product_variants": "Produktvarianten",
+      "product_variants": "Werkvarianten",
       "total_items": "Artikel gesamt",
       "remove_all_items_confirmation": "Alle {{ quantity }} Artikel aus deinem Warenkorb entfernen?",
       "remove_all": "Alle entfernen",
@@ -499,7 +499,7 @@
       "discount": "Rabatt",
       "shipping": "Versand",
       "tax": "Steuer",
-      "product": "Produkt",
+      "product": "Werk",
       "sku": "SKU",
       "price": "Preis",
       "quantity": "Menge",

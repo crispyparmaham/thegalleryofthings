@@ -142,11 +142,11 @@
           "label": "Suchvorschläge"
         },
         "predictive_search_show_vendor": {
-          "label": "Produktanbieter",
+          "label": "Künstler:in",
           "info": "Wird angezeigt, wenn Suchvorschläge aktiviert sind"
         },
         "predictive_search_show_price": {
-          "label": "Produktpreis",
+          "label": "Werkpreis",
           "info": "Wird angezeigt, wenn Suchvorschläge aktiviert sind"
         }
       }
