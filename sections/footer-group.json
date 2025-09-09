@@ -11,6 +11,40 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "newsletter_VWbTwB": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_h6rPbW": {
+          "type": "heading",
+          "settings": {
+            "heading": "Neues aus dem TGOT-Shop erfahren",
+            "heading_size": "h2"
+          }
+        },
+        "paragraph_pXYXkq": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Wir informieren Sie in unserem Newsletter regelmäßig über neue Ausstellungen, Werke und exklusive Angebote.</p>"
+          }
+        },
+        "email_form_HDP6c3": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_h6rPbW",
+        "paragraph_pXYXkq",
+        "email_form_HDP6c3"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -61,6 +95,7 @@
     }
   },
   "order": [
+    "newsletter_VWbTwB",
     "footer"
   ]
 }

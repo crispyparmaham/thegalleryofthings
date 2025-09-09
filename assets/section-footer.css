@@ -144,7 +144,7 @@
 
 .footer__content-bottom {
   border-top: solid 0.1rem rgba(var(--color-foreground), 0.08);
-  padding-top: 3rem;
+  padding-block: 1.5rem;
 }
 
 .footer__content-bottom:only-child {
@@ -154,6 +154,7 @@
 .footer__content-bottom-wrapper {
   display: flex;
   width: 100%;
+  justify-content: center;
 }
 
 @media screen and (max-width: 749px) {
@@ -545,7 +546,7 @@
 }
 
 .copyright__content {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 .copyright__content a {
