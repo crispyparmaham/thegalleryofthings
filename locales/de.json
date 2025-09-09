@@ -339,6 +339,16 @@
     "video": {
       "load_video": "Video laden: {{ description }}"
     },
+    "product_description_wrapper": {
+      "authenticity": "Echtheit",
+      "packaging": "Verpackung & Versand",
+      "return": "Rückgabe",
+      "feedback": "Fragen & Wünsche",
+      "authenticity_default": "Zu jedem Werk erhalten Sie ein Echtheitszertifikat. Dieses führt alle wichtigen Informationen wie Titel, Medium und den Namen der Künstlerin oder des Künstlers auf.",
+      "packaging_default": "Die Verpackung erfolgt sicher und sorgfältig, der Versand erfolgt versichert und mit Sendungsverfolgungsnummer.",
+      "return_default": "Sie können Ihre Bestellung innerhalb von 21 Tagen nach Erhalt zurückgeben.",
+      "feedback_default": "Wir freuen uns über Ihr Feedback und Ihre Wünsche."
+    },
     "slideshow": {
       "load_slide": "Folie laden",
       "previous_slideshow": "Vorherige Folie",

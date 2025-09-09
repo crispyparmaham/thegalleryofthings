@@ -347,6 +347,16 @@
     "video": {
       "load_video": "Load video: {{ description }}"
     },
+    "product_description_wrapper": {
+      "authenticity": "Authenticity",
+      "packaging": "Packaging & Shipping",
+      "return": "Return",
+      "feedback": "Questions & Requests",
+      "authenticity_default": "With each artwork, you will receive a certificate of authenticity. This certificate lists all important information such as title, medium, and the name of the artist.",
+      "packaging_default": "The packaging is done securely and carefully, and the shipping is insured and includes a tracking number.",
+      "return_default": "You can return your order within 21 days of receiving it.",
+      "feedback_default": "We welcome your feedback and requests."
+    },
     "slideshow": {
       "load_slide": "Load slide",
       "previous_slideshow": "Previous slide",

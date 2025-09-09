@@ -89,6 +89,15 @@ product-info {
   }
 }
 
+/* */
+.product__artist-link {
+  text-decoration: none;
+  color: var(--primary);
+}
+.product__artist-link:hover, .product__artist-link:focus-within {
+  text-decoration: underline;
+}
+
 /* Dynamic checkout */
 
 .shopify-payment-button__button {
@@ -247,7 +256,7 @@ a.product__text {
 
 .product__title {
   word-break: break-word;
-  margin-bottom: 1.5rem;
+  margin-block: 0 1.5rem;
 }
 
 .product__title > * {

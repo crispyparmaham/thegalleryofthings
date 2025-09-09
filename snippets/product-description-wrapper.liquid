@@ -9,7 +9,7 @@
 
 
 
-{%- if product.metafields.authenticity.text != blank -%}
+{% comment %} {%- if product.metafields.authenticity.text != blank -%}
   {%- assign authenticity_available = true -%}
 {%- endif -%}
 {%- if product.metafields.packaging.text != blank -%}
@@ -20,7 +20,7 @@
 {%- endif -%}
 {%- if product.metafields.feedback.text != blank -%}
   {%- assign feedback_available = true -%}
-{%- endif -%}
+{%- endif -%} {% endcomment %}
 
 
 {% style %}
@@ -51,43 +51,39 @@
     </div>
     {% comment %} content {% endcomment %}
     {%- if authenticity_available -%}
-      <div id="content-authenticity" class="product__description-additional page-width" {{ block.shopify_attributes }}>
-        {%- if product.metafields.authenticity.text -%}
-          <div>
-            {{ product.metafields.authenticity.text }}
-          </div>
+      <div id="content-authenticity" class="product__description-additional richtext page-width" {{ block.shopify_attributes }}>
+        {%- if product.metafields.custom.authenticity -%}
+            {{ product.metafields.custom.authenticity | metafield_tag }}
+        {%- else -%}
+            {{ 'sections.product_description_wrapper.authenticity_default' | t }}
         {%- endif -%}
-        Echtheit text
       </div>
     {%- endif -%}
     {%- if packaging_available -%}
-      <div id="content-packaging" class="product__description-additional page-width" {{ block.shopify_attributes }}>
-        {%- if product.metafields.packaging .text -%}
-          <div>
-            {{ product.metafields.packaging.text }}
-          </div>
+      <div id="content-packaging" class="product__description-additional richtext page-width" {{ block.shopify_attributes }}>
+        {%- if product.metafields.custom.packaging -%}
+            {{ product.metafields.custom.packaging | metafield_tag }}
+        {%- else -%}
+            {{ 'sections.product_description_wrapper.packaging_default' | t }}
         {%- endif -%}
-        Verpackung & Versand text
       </div>
     {%- endif -%}
     {% if return_available %}
-      <div id="content-return" class="product__description-additional page-width" {{ block.shopify_attributes }}>
-        {%- if product.metafields.return.text -%}
-          <div>
-            {{ product.metafields.return.text }}
-          </div>
+      <div id="content-return" class="product__description-additional richtext page-width" {{ block.shopify_attributes }}>
+        {%- if product.metafields.custom.return -%}
+            {{ product.metafields.custom.return | metafield_tag }}
+        {%- else -%}
+            {{ 'sections.product_description_wrapper.return_default' | t }}
         {%- endif -%}
-        Rückgabe text
       </div>
     {% endif %}
     {% if feedback_available %}
-      <div id="content-feedback" class="product__description-additional page-width" {{ block.shopify_attributes }}>
-        {%- if product.metafields.feedback.text -%}
-          <div>
-            {{ product.metafields.feedback.text }}
-          </div>
+      <div id="content-feedback" class="product__description-additional richtext page-width" {{ block.shopify_attributes }}>
+        {%- if product.metafields.custom.feedback -%}
+            {{ product.metafields.custom.feedback | metafield_tag }}
+        {%- else -%}
+            {{ 'sections.product_description_wrapper.feedback_default' | t }}
         {%- endif -%}
-        Fragen & Wünsche text
       </div>
     {% endif %}
   </section>

@@ -593,7 +593,7 @@
               "default": "Beschreibe das Video"
             }
           }
-        }
+        }, 
       },
       "presets": {
         "name": "Collage"
