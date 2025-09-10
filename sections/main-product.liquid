@@ -783,10 +783,12 @@
       {{ product | structured_data }}
     </script>
   </div>
-    {% render 'product-description-wrapper' %}
+  {% render 'product-description-wrapper' %}
 
+  <script src="{{ 'recently-viewed.js' | asset_url }}" defer="defer"></script>
 
-</product-info>
+  </product-info>
+
 
 {% schema %}
 {

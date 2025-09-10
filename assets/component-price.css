@@ -29,6 +29,15 @@ s.price-item {
   align-items: center;
   flex-direction: column;
 }
+.price-column:has(.price--sold-out) {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+.price-column:has(.price--sold-out) .price {
+  align-items: center;
+}
 
 .price {
   font-size: 1.75rem;

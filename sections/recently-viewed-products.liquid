@@ -24,41 +24,24 @@
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
-  <recently-viewed-products
-    class="recently-viewed-products related-products section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-    data-section-id="{{ section.id }}"
-    data-limit="{{ section.settings.products_to_show }}"
-  >
-    <div class="page-width">
-      <div class="recently-viewed-container" style="display: none;">
-        <h2 class="recently-viewed__heading inline-richtext {{ section.settings.heading_size }} uppercase center">
-          {{ section.settings.heading }}
-        </h2>
-        <ul
-          class="recently-viewed-grid grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-          role="list"
-        >
-        </ul>
-      </div>
-    </div>
-</recently-viewed-products>
-
-<!-- Template für AJAX calls - wird nicht angezeigt -->
-<div style="display: none;">
-    {% if product %}
-      <li class="grid__item">
-        {% render 'card-product',
-            card_product: product,
-            media_aspect_ratio: 1,
-            image_shape: section.settings.image_shape,
-            show_secondary_image: section.settings.show_secondary_image,
-            show_vendor: section.settings.show_vendor,
-            show_rating: section.settings.show_rating,
-            skip_styles: false
-        %}
-      </li>
-    {% endif %}
-</div>
+    <recently-viewed-products
+        class="recently-viewed-products related-products section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        data-section-id="{{ section.id }}"
+        data-limit="{{ section.settings.products_to_show }}"
+    >
+        <div class="page-width">
+            <div class="recently-viewed-container" style="display: none;">
+                <h2 class="recently-viewed__heading inline-richtext {{ section.settings.heading_size }} uppercase center">
+                    {{ section.settings.heading }}
+                </h2>
+                <ul
+                    class="recently-viewed-grid grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
+                    role="list"
+                >
+                </ul>
+            </div>
+        </div>
+    </recently-viewed-products>
   
   {% if section.settings.image_shape == 'arch' %}
     {{ 'mask-arch.svg' | inline_asset_content }}
