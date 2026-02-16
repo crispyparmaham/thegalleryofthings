@@ -210,10 +210,10 @@
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                     {{ product.description }}
                     {%-  if product.metafields.custom.kunstform.value -%}
-                    <p>{{ product.metafields.custom.kunstform.value }}</p>
+                    <p>[ {{ product.metafields.custom.kunstform.value }} ]</p>
                     {%- endif -%}
                     {%-  if product.metafields.custom.dimensions.value -%}
-                    <p>{{ product.metafields.custom.dimensions.value }}</p>
+                    <p>[ {{ product.metafields.custom.dimensions.value }} ]</p>
                     {%- endif -%}
                   </div>
                 {%- endif -%}
@@ -231,7 +231,7 @@
                 {{ block.settings.custom_liquid }}
               {%- when 'collapsible_tab' -%}
                 {%- assign collapsible_counter = collapsible_counter | plus: 1 -%}
-                {%- if block.settings.heading != blank -%}
+                {%- if block.settings.heading != blank and block.settings.content != empty -%}
                 <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                   {%- if collapsible_counter == 1 -%}
                     <details open id="Details-{{ block.id }}-{{ section.id }}">
