@@ -54,7 +54,7 @@
           {%- assign parent_collection = collection.metafields.custom.parent-collection-page -%}
           {%- assign parent_collection_page = pages[parent_collection] -%}
 
-          {%- if parent_collection_page -%}
+          {%- if parent_collection_page and collection.title != "Produkte" -%}
             <li class="breadcrumbs__item">
               <a class="breadcrumbs__link" href="{{ parent_collection_page.url }}">{{ parent_collection_page.title }}</a>
             </li>
