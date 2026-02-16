@@ -35,7 +35,7 @@
     }
   }
 {%- endstyle -%}
-<div>
+{% comment %} <div>
   Test: {{ metaobject.name.value }}
   <br>
 {% for element in metaobject %}
@@ -44,7 +44,7 @@
     </div>
 
 {% endfor %}
-</div>
+</div> {% endcomment %}
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   {%- assign artist_products = metaobject.products.value -%}
   {%- paginate artist_products by section.settings.products_per_page -%}
