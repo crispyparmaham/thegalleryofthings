@@ -28,6 +28,7 @@
         class="recently-viewed-products related-products section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
         data-section-id="{{ section.id }}"
         data-limit="{{ section.settings.products_to_show }}"
+        data-placeholder-image="{{ 'placeholder-product.png' | asset_url }}"
     >
         <div class="page-width">
             <div class="recently-viewed-container" style="display: none;">

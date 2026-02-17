@@ -4,6 +4,7 @@ class RecentlyViewedProducts extends HTMLElement {
     this.sectionId = this.dataset.sectionId;
     this.limit = parseInt(this.dataset.limit) || 4;
     this.storageKey = 'shopify-recently-viewed';
+    this.placeholderImage = this.dataset.placeholderImage || '';
     
     this.init();
   }
@@ -101,7 +102,8 @@ class RecentlyViewedProducts extends HTMLElement {
 
   renderFallbackCard(product) {
     const price = product.price ? (product.price / 100).toFixed(0) : '-';
-    
+    const imageSrc = product.featured_image || this.placeholderImage;
+
     return `
       <div class="card-wrapper product-card-wrapper">
         <div class="card card--standard card--media">
@@ -109,7 +111,7 @@ class RecentlyViewedProducts extends HTMLElement {
             <div class="card__media">
               <div class="media media--transparent">
                 <img
-                  src="${product.featured_image || ''}"
+                  src="${imageSrc}"
                   alt="${product.title || ''}"
                   loading="lazy"
                   width="300"
