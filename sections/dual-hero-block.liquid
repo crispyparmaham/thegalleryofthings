@@ -176,7 +176,7 @@
                         </a>
                         {% endif %}
                         {% if section.settings.email_address != blank %}
-                        <a href="mailto:{{ section.settings.email_address }}">
+                        <a class="email-link" data-e="{{ section.settings.email_address | split: '@' | first }}" data-d="{{ section.settings.email_address | split: '@' | last }}" href="#">
                             <span class="svg-wrapper">
                             {{- 'icon-tgot-email.svg' | inline_asset_content -}}
                             </span>
@@ -227,6 +227,12 @@
 
 </div>
 
+
+<script>
+document.querySelectorAll('#Dual-Hero-Block-{{ section.id }} .email-link').forEach(function(el) {
+    el.href = 'mailto:' + el.dataset.e + '@' + el.dataset.d;
+});
+</script>
 
 {% schema %}
 {
