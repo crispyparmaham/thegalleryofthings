@@ -61,6 +61,25 @@
       class="product__media-list contains-media grid grid--peek list-unstyled slider slider--mobile"
       role="list"
     >
+      {%- if product.media.size == 0 -%}
+        <li class="product__media-item grid__item product__media-item--single is-active">
+          <div
+            class="product-media-container media-type-image media-fit-{{ section.settings.media_fit }} global-media-settings gradient{% if section.settings.constrain_to_viewport %} constrain-height{% endif %}"
+            style="--ratio: 1.0; --preview-ratio: 1.0;"
+          >
+            <div class="product__media media media--transparent">
+              <img
+                src="{{ 'placeholder-product.png' | asset_url }}"
+                alt="{{ product.title | escape }}"
+                class="motion-reduce"
+                loading="eager"
+                width="1200"
+                height="1200"
+              >
+            </div>
+          </div>
+        </li>
+      {%- endif -%}
       {%- if product.selected_or_first_available_variant.featured_media != null -%}
         {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
         <li
