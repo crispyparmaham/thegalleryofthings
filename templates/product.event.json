@@ -1,0 +1,137 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "collapsible_tab_yCJf89": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Über das Bild",
+            "icon": "none",
+            "content": "{{ product.metafields.custom[\"about-the-work\"] | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_8GfPmY": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "{{ product.metafields.custom[\"accordeon_title-1\"].value }}",
+            "icon": "none",
+            "content": "{{ product.metafields.custom[\"accordeon_content-1\"] | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "collapsible_tab_Jc3ypz": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "{{ product.metafields.custom[\"accordeon_title-2\"].value }}",
+            "icon": "none",
+            "content": "{{ product.metafields.custom[\"accordeon_content-2\"] | metafield_tag }}",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "description",
+        "variant_picker",
+        "buy_buttons",
+        "collapsible_tab_yCJf89",
+        "collapsible_tab_8GfPmY",
+        "collapsible_tab_Jc3ypz"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "Empfehlungen für Sie",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "recently-viewed-products": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "heading": "Zuletzt angesehen",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "recently-viewed-products"
+  ]
+}

@@ -83,10 +83,10 @@
     "spotlight_kc46WQ": {
       "type": "spotlight",
       "blocks": {
-        "product_pg8bVH": {
+        "product_NayVYj": {
           "type": "product",
           "settings": {
-            "product": "pharao-2"
+            "product": "kat-vandal-bubble-gum"
           }
         },
         "artist_qpnrh4": {
@@ -103,7 +103,7 @@
         }
       },
       "block_order": [
-        "product_pg8bVH",
+        "product_NayVYj",
         "artist_qpnrh4",
         "collection_EpCxcD"
       ],

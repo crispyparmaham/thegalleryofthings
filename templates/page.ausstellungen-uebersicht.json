@@ -19,6 +19,12 @@
     "collection_list_YLzAxN": {
       "type": "collection-list",
       "blocks": {
+        "featured_collection_YrD77w": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "test-produkte"
+          }
+        },
         "featured_collection_Vg7J8d": {
           "type": "featured_collection",
           "settings": {
@@ -27,6 +33,7 @@
         }
       },
       "block_order": [
+        "featured_collection_YrD77w",
         "featured_collection_Vg7J8d"
       ],
       "name": "t:sections.collection-list.presets.name",
