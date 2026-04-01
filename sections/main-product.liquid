@@ -783,7 +783,9 @@
       {{ product | structured_data }}
     </script>
   </div>
-  {% render 'product-description-wrapper' %}
+  {% unless template == 'product.event' %}
+    {% render 'product-description-wrapper' %}
+  {% endunless %}
 
   <script src="{{ 'recently-viewed.js' | asset_url }}" defer="defer"></script>
 
