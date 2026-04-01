@@ -1451,5 +1451,27 @@
         "default": "scheme-1"
       }
     ]
+  },
+  {
+    "name": "Kontakt",
+    "settings": [
+      {
+        "type": "text",
+        "id": "whatsapp_number",
+        "label": "WhatsApp-Nummer",
+        "info": "Nur Ziffern, mit Ländervorwahl ohne + (z.B. 4930123456)"
+      },
+      {
+        "type": "text",
+        "id": "email_address",
+        "label": "E-Mail-Adresse"
+      },
+      {
+        "type": "text",
+        "id": "phone_number",
+        "label": "Telefonnummer",
+        "info": "Mit Ländervorwahl (z.B. +49 30 123456)"
+      }
+    ]
   }
 ]
