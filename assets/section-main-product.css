@@ -323,6 +323,12 @@ a.product__text {
 .product--no-media .product__text,
 .product--no-media .product__tax,
 .product--no-media .product__sku,
+.product__media-item--placeholder .product-media-container {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .product--no-media shopify-payment-terms {
   text-align: center;
 }
