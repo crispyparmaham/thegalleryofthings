@@ -167,24 +167,24 @@
                 <div class="link-box">
                 <span>{{ section.settings.link_label_left }}</span>
                     <div class="contact-slide-out">
-                        {% if settings.whatsapp_number != blank %}
-                        <a href="https://wa.me/{{ settings.whatsapp_number }}" target="_blank">
+                        {% if section.settings.whatsapp_number != blank %}
+                        <a href="https://wa.me/{{ section.settings.whatsapp_number }}" target="_blank">
                             <span class="svg-wrapper">
                             {{- 'icon-tgot-whatsapp.svg' | inline_asset_content -}}
                             </span>
                             WhatsApp
                         </a>
                         {% endif %}
-                        {% if settings.email_address != blank %}
-                        <a href="mailto:{{ settings.email_address }}">
+                        {% if section.settings.email_address != blank %}
+                        <a href="mailto:{{ section.settings.email_address }}">
                             <span class="svg-wrapper">
                             {{- 'icon-tgot-email.svg' | inline_asset_content -}}
                             </span>
                             E-Mail
                         </a>
                         {% endif %}
-                        {% if settings.phone_number != blank %}
-                        <a href="tel:{{ settings.phone_number }}">
+                        {% if section.settings.phone_number != blank %}
+                        <a href="tel:{{ section.settings.phone_number }}">
                             <span class="svg-wrapper">
                             {{- 'icon-tgot-phone.svg' | inline_asset_content -}}
                             </span>
@@ -210,41 +210,9 @@
     </div>
     <div class="hero-wrapper right-hero-wrapper">
         {% if section.settings.link_right and section.settings.link_label_right %}
-             {% if section.settings.contact_slide_out_right %}
-                <div class="link-box">
-                    <span>{{ section.settings.link_label_right }}</span>
-                    <div class="contact-slide-out">
-                        {% if settings.whatsapp_number != blank %}
-                        <a href="https://wa.me/{{ settings.whatsapp_number }}" target="_blank">
-                            <span class="svg-wrapper">
-                            {{- 'icon-tgot-whatsapp.svg' | inline_asset_content -}}
-                            </span>
-                            WhatsApp
-                        </a>
-                        {% endif %}
-                        {% if settings.email_address != blank %}
-                        <a href="mailto:{{ settings.email_address }}">
-                            <span class="svg-wrapper">
-                            {{- 'icon-tgot-email.svg' | inline_asset_content -}}
-                            </span>
-                            E-Mail
-                        </a>
-                        {% endif %}
-                        {% if settings.phone_number != blank %}
-                        <a href="tel:{{ settings.phone_number }}">
-                            <span class="svg-wrapper">
-                            {{- 'icon-tgot-phone.svg' | inline_asset_content -}}
-                            </span>
-                            Telefon
-                        </a>
-                        {% endif %}
-                    </div>
-                </div>
-            {% else %}
-                <a class="link-box" href="{{ section.settings.link_right }}">
-                    <span>{{ section.settings.link_label_right }}</span>
-                </a>
-            {% endif %}
+            <a class="link-box" href="{{ section.settings.link_right }}">
+                <span>{{ section.settings.link_label_right }}</span>
+            </a>
         {% endif %}
         <div class="media">
             {{
@@ -301,6 +269,23 @@
             "label": "Aktiviere Kontakt-Slideout (Links zu Whatsapp, E-Mail, Telefon)"
         },
         {
+          "type": "text",
+          "id": "whatsapp_number",
+          "label": "WhatsApp-Nummer",
+          "info": "Nur Ziffern, mit Ländervorwahl ohne + (z.B. 4930123456)"
+        },
+        {
+          "type": "text",
+          "id": "email_address",
+          "label": "E-Mail-Adresse"
+        },
+        {
+          "type": "text",
+          "id": "phone_number",
+          "label": "Telefonnummer",
+          "info": "Mit Ländervorwahl (z.B. +49 30 123456)"
+        },
+        {
         "type": "header",
         "content": "Bild rechts"
         },
@@ -324,12 +309,6 @@
           "type": "url",
           "id": "link_right",
           "label": "Link rechts"
-        },
-        {
-            "type": "checkbox",
-            "id": "contact_slide_out_right",
-            "default": false,
-            "label": "Aktiviere Kontakt-Slideout (Links zu Whatsapp, E-Mail, Telefon)"
         },
     ],
     "presets": [
