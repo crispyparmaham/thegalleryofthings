@@ -274,6 +274,23 @@ h5,
   word-break: break-word;
 }
 
+/* Rechtstext-/Policy-Seiten: saubere Silbentrennung statt buchstabenweisem Umbruch */
+.shopify-policy__title h1 {
+  word-break: normal;          /* globales break-word zurücknehmen */
+  overflow-wrap: break-word;   /* Fallback: nur umbrechen, wenn Wort sonst überläuft */
+  hyphens: auto;               /* Trennung mit Bindestrich (nutzt lang="de") */
+}
+
+/* Rechtstext-/Policy-Seiten: an das Theme-Grid angleichen (statt Shopify-Default 822px) */
+.shopify-policy__container {
+  max-width: var(--page-width); /* Container = Theme-Breite; Überschrift bekommt so mehr Platz */
+}
+
+.shopify-policy__body .rte {
+  max-width: 70ch;              /* lesefreundliche Zeilenlänge für den Fließtext */
+  margin-inline: auto;
+}
+
 .hxxl {
   font-size: clamp(calc(var(--font-heading-scale) * 5.6rem), 14vw, calc(var(--font-heading-scale) * 7.2rem));
   line-height: 1.1;
