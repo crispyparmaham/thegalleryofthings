@@ -18,6 +18,10 @@
     },
     "form": {
       "type": "contact-form",
+      "custom_css": [
+        "button {background: black; color: white; border: 1px solid black;}",
+        "button:hover {background: white; color: black; border: 1px solid black;}"
+      ],
       "settings": {
         "heading": "",
         "heading_size": "h1",

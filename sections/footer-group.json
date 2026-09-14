@@ -30,12 +30,45 @@
         "email_form_HDP6c3": {
           "type": "email_form",
           "settings": {}
+        },
+        "revoq_eu_withdrawal_button_widerrufsbutton_popup_button_TmaKYb": {
+          "type": "shopify://apps/revoq-eu-withdrawal-button/blocks/widerrufsbutton-popup-button/019c3356-2775-7d52-b915-4b0f965005ae",
+          "settings": {
+            "trigger_label": "-",
+            "trigger_alignment": "right",
+            "trigger_width": "auto",
+            "trigger_button_size": "medium",
+            "trigger_button_variant": "outline",
+            "trigger_button_color": "#111827",
+            "trigger_button_text_color": "#ffffff",
+            "trigger_button_border_color": "#FFFFFF",
+            "trigger_button_border_width": 1,
+            "trigger_button_radius": 0,
+            "section_padding": 24,
+            "heading_text": "-",
+            "show_section_heading": true,
+            "show_subheading": true,
+            "subheading_text": "-",
+            "name_placeholder": "-",
+            "order_placeholder": "-",
+            "show_order_hint": true,
+            "show_email_hint": true,
+            "show_privacy_notice": true,
+            "show_required_hint": false,
+            "text_color": "#111827",
+            "secondary_text_color": "#6b7280",
+            "card_shape": "square",
+            "input_shape": "square",
+            "button_color": "#111827",
+            "button_text_color": "#ffffff"
+          }
         }
       },
       "block_order": [
         "heading_h6rPbW",
         "paragraph_pXYXkq",
-        "email_form_HDP6c3"
+        "email_form_HDP6c3",
+        "revoq_eu_withdrawal_button_widerrufsbutton_popup_button_TmaKYb"
       ],
       "name": "t:sections.newsletter.presets.name",
       "settings": {
@@ -43,6 +76,13 @@
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
+      }
+    },
+    "17871393943699b425": {
+      "type": "apps",
+      "custom_css": [],
+      "settings": {
+        "include_margins": true
       }
     },
     "footer": {
@@ -78,6 +118,7 @@
         "tgot_footer_content_KQ7ncH",
         "image_djUbJY"
       ],
+      "custom_css": [],
       "settings": {
         "color_scheme": "scheme-4",
         "newsletter_enable": false,
@@ -96,6 +137,7 @@
   },
   "order": [
     "newsletter_VWbTwB",
+    "17871393943699b425",
     "footer"
   ]
 }

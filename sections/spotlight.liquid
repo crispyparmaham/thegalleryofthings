@@ -38,6 +38,10 @@
   .has-bottom-line {
     border-bottom: 1px solid rgba(var(--color-foreground), 0.2);
   }
+
+  .collection .card-wrapper:has(a[href*="artist"]) .card__media img {
+    filter: grayscale(1);
+  }
 {%- endstyle -%}
 
 {%- liquid

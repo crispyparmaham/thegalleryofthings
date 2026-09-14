@@ -180,7 +180,7 @@
             "title": "<p>Versandinformationen </p><p>sicher und nachhaltig</p>",
             "icon": "tgot-package",
             "icon-size": "extra-large",
-            "text": "<p>Wir legen großen Wert darauf, dass jedes Kunstwerk sicher und nachhaltig bei Ihnen ankommt. Unsere Verpackungsmaterialien sind umweltfreundlich/ recycelt, und der Versand erfolgt in Zusammenarbeit mit verantwortungsbewussten Logistikpartnern.Nationaler & Internationaler Versand möglich. Kunstgerechte Verpackung für maximale Sicherheit. Klimafreundlicher Transport, wo immer es machbar ist. Falls Sie besondere Wünsche zum Versand oder zur Abholung haben, finden wir gemeinsam eine passende Lösung!</p>",
+            "text": "<p><strong>Hinweis: Aktuell können Sie im Shop nur die Abholung der Werke in unserem Atelier in Berlin auswählen. Nach Kauf bereiten wir das Werk für Sie entsprechend zur Abholung vor Ort vor. Wir bemühe uns Ihnen in Kürze auch eine sichere und kunstgerechte Versandmöglichkeit anzubieten.<br/><br/></strong>Wir legen großen Wert darauf, dass jedes Kunstwerk sicher und nachhaltig bei Ihnen ankommt. Unsere Verpackungsmaterialien sind umweltfreundlich/ recycelt, und der Versand erfolgt in Zusammenarbeit mit verantwortungsbewussten Logistikpartnern.Nationaler & Internationaler Versand möglich. Kunstgerechte Verpackung für maximale Sicherheit. Klimafreundlicher Transport, wo immer es machbar ist. Falls Sie besondere Wünsche zum Versand oder zur Abholung haben, finden wir gemeinsam eine passende Lösung!</p>",
             "link_label": "",
             "link": ""
           }
@@ -238,7 +238,7 @@
         "image_left": "shopify://shop_images/alexandra-mann_onchair.jpg",
         "image_title_left": "Alexandra Mann, Galeristin hinter The Gallery of Things",
         "link_label_left": "<strong>KONTAKT</strong> zum Vernetzen  und Kunstwerke anfragen",
-        "link_left": "shopify://pages/contact",
+        "link_left": "shopify://pages/kontact",
         "contact_slide_out_left": true,
         "whatsapp_number": "4915161026532",
         "email_address": "alexandra.mann@thegalleryofthings.com",

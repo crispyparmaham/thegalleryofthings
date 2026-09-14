@@ -25,6 +25,7 @@
       "block_order": [
         "announcement-bar-0"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "auto_rotate": false,
